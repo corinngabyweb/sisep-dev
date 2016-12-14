@@ -1,0 +1,212 @@
+<section class="page-padding row" data-ng-controller="morrisChartCtrl">
+
+  <div class="col-md-6">
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Line chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" class="morris_chart" morris-chart
+               data-data="simpleData"
+               data-type="line"
+               data-xkey="year"
+               data-ykeys='["value"]'
+               data-labels='["Value"]'
+               data-line-colors='{{simpleColors}}'
+               data-line-width="3"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Line chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" morris-chart
+               data-data="comboData"
+               data-type="line"
+               data-xkey="year"
+               data-ykeys='["a", "b", "c"]'
+               data-labels='["Value A", "Value B", "Value C"]'
+               data-line-colors='{{comboColors}}'
+               data-line-width="3"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Bar chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" morris-chart
+               data-data="comboData"
+               data-type="bar"
+               data-xkey="year"
+               data-ykeys='["a", "b", "c"]'
+               data-labels='["Value A", "Value B", "Value C"]'
+               data-bar-colors='{{comboColors}}'
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Formatted Donut Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" morris-chart
+               data-data="donutData"
+               data-type="donut"
+               data-xkey="year"
+               data-colors='{{doughnutColors}}'
+               data-formatter="return '$' + y;"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+  <div class="col-md-6">
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Area chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" morris-chart
+               data-data="simpleData"
+               data-type="area"
+               data-xkey="year"
+               data-ykeys='["value"]'
+               data-labels='["Value A"]'
+               data-line-colors='{{simpleColors}}'
+               data-line-width="3"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Area chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" morris-chart
+               data-data="comboData"
+               data-type="area"
+               data-xkey="year"
+               data-ykeys='["a", "b", "c"]'
+               data-labels='["Value A", "Value B", "Value C"]'
+               data-line-colors='{{comboColors}}'
+               data-line-width="3"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Stacked bar chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" morris-chart
+               data-data="comboData"
+               data-type="bar"
+               data-xkey="year"
+               data-ykeys='["a", "b", "c"]'
+               data-labels='["Value A", "Value B", "Value C"]'
+               data-bar-colors='{{comboColors}}'
+               data-stacked="true"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Colorful Donut Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div style="width: 100%; height: 300px;" morris-chart
+               data-data="donutData"
+               data-type="donut"
+               data-xkey="year"
+               data-colors='{{doughnutColors}}'
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+  </div>
+
+</section>

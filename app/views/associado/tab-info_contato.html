@@ -1,0 +1,130 @@
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
+	      <label>Telefone fixo</label>
+	      <input type="text"
+	      	ui-br-phone-number
+	        class="form-control"
+	        maxlength="14" 
+	        data-ng-model="associado.tel_fixo" />
+
+	    </div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+	      <label>Telefone celular</label>
+	      <input type="text"
+	      	ui-br-phone-number
+	        class="form-control"
+	        maxlength="15" 
+	        data-ng-model="associado.tel_celular" />
+	    </div>
+		
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+	      <label>Telefone comercial</label>
+	      <input type="text"
+	      	ui-br-phone-number
+	        class="form-control"
+	        data-ng-model="associado.tel_comercial" />
+	    </div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<md-checkbox ng-model="associado.whatsapp" >
+		<i class="fa fa-whatsapp"></i> Não possuo WhatsApp</md-checkbox>
+	</div>
+	<div class="col-md-4" ng-if="!associado.whatsapp">
+		<div class="form-group">
+		    <div class="input-group">
+		      <div class="input-group-addon">
+	      		<i class="fa fa-whatsapp"></i>
+		      </div>
+		      <input type="text" 
+		      	class="form-control" 
+		      	data-ng-model="associado.whatsapp_num" />
+		    </div>
+	  	</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
+		    <div class="input-group">
+		      <div class="input-group-addon">
+	      		<i class="fa fa-envelope"></i>
+		      </div>
+		      <input type="email" 
+		      	class="form-control" 
+		      	data-ng-model="associado.email" 
+		      	placeholder="voce@site.com.br" />
+		    </div>
+	  	</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+		    <div class="input-group">
+		      <div class="input-group-addon">
+	      		<i class="fa fa-facebook"></i>
+		      </div>
+		      <input type="text" 
+			      class="form-control" 
+			      data-ng-model="associado.facebook" />
+		    </div>
+	  	</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+		    <div class="input-group">
+		      <div class="input-group-addon">
+	      		<i class="fa fa-twitter"></i>
+		      </div>
+		      <input type="text" 
+			      class="form-control" 
+			      data-ng-model="associado.twitter" />
+		    </div>
+	  	</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="form-group">
+		    <div class="input-group">
+		      <div class="input-group-addon">
+	      		<i class="fa fa-linkedin"></i>
+		      </div>
+		      <input type="text" 
+			      class="form-control" 
+			      data-ng-model="associado.linkedin" />
+		    </div>
+	  	</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+		    <div class="input-group">
+		      <div class="input-group-addon">
+	      		<i class="fa fa-google-plus"></i>
+		      </div>
+		      <input type="text" 
+			      class="form-control" 
+			      data-ng-model="associado.gplus" />
+		    </div>
+	  	</div>
+	</div>
+	<div class="col-md-4">
+		<div class="form-group">
+		    <div class="input-group">
+		      <div class="input-group-addon">
+	      		<i class="fa fa-instagram"></i>
+		      </div>
+		      <input type="text" 
+			      class="form-control" 
+			      data-ng-model="associado.instagram" />
+		    </div>
+	  	</div>
+	</div>
+</div>

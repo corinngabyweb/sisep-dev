@@ -1,0 +1,779 @@
+<div class="page-padding row">
+
+  <div class="col-md-6">
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Bottom Sheet</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <div>
+            <h3>Usage</h3>
+
+            <p>
+              You can show a bottom sheet using the service <code>$mdBottomSheet</code>.Bottom sheet can be dismissed
+              with the service or a swipe down.
+            </p>
+
+            <h3>Actions</h3>
+
+            <p>
+              Click to open a bottom sheet.
+            </p>
+          </div>
+          <div module="app.material">
+            <div ng-controller="BottomSheetExample">
+              <div class="bottom-sheet-demo inset" layout="" layout-align="center" layout-align="center">
+                <md-button flex="50" class="btn-width-medium md-primary md-raised md-button "
+                           ng-click="showListBottomSheet($event)">
+                  Show as List
+                </md-button>
+                <md-button flex="50" class="btn-width-medium md-primary md-raised md-button "
+                           ng-click="showGridBottomSheet($event)">
+                  Show as Grid
+                </md-button>
+              </div>
+              <br/>
+              <b layout="row" layout-align="center center" layout-margin>
+                {{alert}}
+              </b>
+            </div>
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-accent md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Contact chips</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <div>
+            <p>
+              Contact Chips work like tags with contact pictures that you can add to any text field. The are displayed
+              with a nice style and can be inserted or removed.
+            </p>
+          </div>
+          <div class="chipsdemoContactChips">
+            <div ng-controller="ContactChipDemoCtrl as ctrl" layout="column">
+              <md-content class="md-padding autocomplete" layout="column">
+                <md-contact-chips
+                        ng-model="ctrl.contacts"
+                        md-contacts="ctrl.querySearch($query)"
+                        md-contact-name="name"
+                        md-contact-image="image"
+                        md-contact-email="email"
+                        md-require-match
+                        filter-selected="ctrl.filterSelected"
+                        placeholder="To">
+                </md-contact-chips>
+                <md-list class="fixedRows">
+                  <md-subheader class="md-no-sticky">Contacts</md-subheader>
+                  <md-list-item class="md-2-line contact-item" ng-repeat="(index, contact) in ctrl.allContacts"
+                                ng-if="ctrl.contacts.indexOf(contact) < 0">
+                    <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}"/>
+
+                    <div class="md-list-item-text compact">
+                      <h3>{{contact.name}}</h3>
+
+                      <p>{{contact.email}}</p>
+                    </div>
+                  </md-list-item>
+                  <md-list-item class="md-2-line contact-item selected" ng-repeat="(index, contact) in ctrl.contacts">
+                    <img ng-src="{{contact.image}}" class="md-avatar" alt="{{contact.name}}"/>
+
+                    <div class="md-list-item-text compact">
+                      <h3>{{contact.name}}</h3>
+
+                      <p>{{contact.email}}</p>
+                    </div>
+                  </md-list-item>
+                </md-list>
+              </md-content>
+            </div>
+          </div>
+
+
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Progress circular</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <div>
+            <p>
+              You can use determined progress bars and indeterminate progress bars using the directive <code>md-progress-circular</code>
+            </p>
+
+            <p>
+              For operations where the percentage of the operation completed can be determined, use a determinate
+              indicator. They give users a quick sense of how long an operation will take
+            </p>
+
+            <p>
+              For operations where the user is asked to wait a moment while something finishes up, and it’s not
+              necessary
+              to expose what's happening behind the scenes and how long it will take, use an indeterminate indicator
+            </p>
+          </div>
+          <div ng-controller="ProgressCtrl" layout="column" layout-margin style="padding:25px;">
+            <h4 style="margin-top:10px">Determinate</h4>
+
+            <div layout="row" layout-sm="column" layout-align="space-around">
+              <md-progress-circular md-mode="determinate" value="{{determinateValue}}"></md-progress-circular>
+            </div>
+            <h4>Indeterminate</h4>
+
+            <div layout="row" layout-sm="column" layout-align="space-around">
+              <md-progress-circular class="md-primary" md-mode="indeterminate"></md-progress-circular>
+              <md-progress-circular class="md-accent" md-mode="indeterminate"></md-progress-circular>
+              <md-progress-circular class="md-primary" md-mode="indeterminate"></md-progress-circular>
+              <md-progress-circular class="md-warn md-hue-3" md-mode="indeterminate"></md-progress-circular>
+              <md-progress-circular class="md-warn" md-mode="indeterminate"></md-progress-circular>
+            </div>
+          </div>
+
+
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-accent md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Toast</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+
+          <div class="toast-element-box" ng-controller="ToastDemoCtrl" layout-fill layout="column" class="inset"
+               ng-cloak>
+
+            <div layout="row" layout-sm="column" layout-align="space-around">
+              <div style="width:50px"></div>
+              <md-button class="md-raised md-accent" ng-click="showSimpleToast()">
+                Show Simple
+              </md-button>
+              <md-button class="md-raised md-primary" ng-click="showActionToast()">
+                Show With Action
+              </md-button>
+              <md-button class="md-raised" ng-click="showCustomToast()">
+                Show Custom
+              </md-button>
+              <div style="width:50px"></div>
+            </div>
+            <div layout="row" id="toastBounds">
+              <div>
+                <br/>
+                <b>Toast Position: "{{getToastPosition()}}"</b>
+                <br/>
+                <md-checkbox ng-repeat="(name, isSelected) in toastPosition"
+                             ng-model="toastPosition[name]">
+                  {{name}}
+                </md-checkbox>
+              </div>
+            </div>
+            <div layout="row">
+              <md-button class="md-primary md-fab md-fab-bottom-right">
+                FAB
+              </md-button>
+              <md-button class="md-accent md-fab md-fab-top-right">
+                FAB
+              </md-button>
+            </div>
+            <p>
+              Toast can be dismissed with a swipe, a timer, or a button.<br/>
+              <span style="font-size:0.8em">Notice the 'Show Custom' toast will not nudge the FABs positions since a custom parent was specified.</span>
+            </p>
+          </div>
+
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1 tooltipdemoBasicUsage">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <md-toolbar class="md-accent">
+          <h2 class="md-toolbar-tools">
+            <span flex>Awesome Md App</span>
+            <md-button class="md-fab md-accent" aria-label="refresh">
+              <md-tooltip>
+                Refresh
+              </md-tooltip>
+              <md-icon md-svg-src="dist/img/icons/ic_refresh_24px.svg" style="width: 24px; height: 24px;">
+              </md-icon>
+            </md-button>
+          </h2>
+        </md-toolbar>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+
+          <div ng-controller="TooltipDemo">
+            <p>
+              The tooltip is visible when the button is hovered, focused, or touched.
+            </p>
+            <md-button class="md-fab md-fab-top-left left" aria-label="Insert Drive">
+              <md-icon md-svg-src="dist/img/icons/ic_insert_drive_file_24px.svg"
+                       style="width: 24px; height: 24px;"></md-icon>
+              <md-tooltip md-visible="demo.showTooltip">
+                Insert Drive
+              </md-tooltip>
+            </md-button>
+            <md-button class="md-fab md-fab-top-right right" aria-label="Photos">
+              <md-icon md-svg-src="dist/img/icons/ic_photo_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+              <md-tooltip>
+                Photos
+              </md-tooltip>
+            </md-button>
+            <div style="margin-top: 150px;">
+              <p>Additionally, the Tooltip's `md-visible` attribute can use data-binding to programmatically show/hide
+                itself. Toggle the checkbox below...</p>
+            </div>
+            <md-checkbox ng-model="demo.showTooltip">
+              Insert Drive
+            </md-checkbox>
+          </div>
+
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Tabs</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <div>
+            <p>
+              Use the directive <code>md-tabs</code> and <code>md-tab</code> to create awesome tabs with animation when
+              scrolling. You can bind the selected tab via the selected attribute on the md-tabs element.
+            </p>
+          </div>
+          <div class="tabsdemoDynamicTabs">
+
+            <div ng-controller="TabsDemoCtrl" class="sample" layout="column">
+              <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect>
+                <md-tab ng-repeat="tab in tabs"
+                        ng-disabled="tab.disabled"
+                        label="{{tab.title}}">
+                  <div class="demo-tab tab{{$index%4}}" style="padding: 25px; text-align: center;">
+                    <div ng-bind="tab.content"></div>
+                    <br/>
+                    <md-button class="md-primary md-raised" ng-click="removeTab( tab )" ng-disabled="tabs.length <= 1">
+                      Remove Tab
+                    </md-button>
+                  </div>
+                </md-tab>
+              </md-tabs>
+              <form ng-bbmit="addTab(tTitle,tContent)" layout="column" style="padding-top:20px;padding-left:20px;">
+                <div layout="row" layout-sm="column" layout-margin>
+                  <md-input-container>
+                    <label for="activeIndex">Active Index</label>
+                    <input type="text" id="activeIndex" ng-model="selectedIndex" disabled>
+                  </md-input-container>
+                  <md-input-container>
+                    <label for="activeTitle">Active Title</label>
+                    <input type="text" id="activeTitle" ng-model="tabs[selectedIndex].title">
+                  </md-input-container>
+                </div>
+                <div layout="row" layout-sm="column" layout-margin>
+                  <md-input-container>
+                    <label for="label">Label</label>
+                    <input type="text" id="label" ng-model="tTitle">
+                  </md-input-container>
+                  <md-input-container>
+                    <label for="content-text">Content</label>
+                    <input type="text" id="content-text" ng-model="tContent">
+                  </md-input-container>
+                  <md-button aria-label="button" class="add-tab md-primary" type="submit" style="max-height: 40px">Add
+                    Tab
+                  </md-button>
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Fab Speed Dial</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <div ng-controller="FabSpeedDialCtrl as demo" layout="column" ng-cloak>
+        <md-content class="md-padding" layout="column">
+          <p>
+            You may supply a direction of <code>left</code>, <code>up</code>, <code>down</code>, or
+            <code>right</code> through the <code>md-direction</code> attribute.
+          </p>
+          <div class="lock-size" layout="row" layout-align="center center">
+            <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                               ng-class="demo.selectedMode">
+              <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-warn">
+                  <md-icon md-svg-src="dist/img/icons/ic_menu_24px.svg"></md-icon>
+                </md-button>
+              </md-fab-trigger>
+              <md-fab-actions>
+                <md-button aria-label="Twitter" class="md-fab md-primary md-raised md-mini">
+                  <md-icon md-svg-src="dist/img/icons/ic_inbox_24px.svg" aria-label="Twitter"></md-icon>
+                </md-button>
+                <md-button aria-label="Facebook" class="md-fab md-accent md-raised md-mini">
+                  <md-icon md-svg-src="dist/img/icons/ic_chat_24px.svg" aria-label="Facebook"></md-icon>
+                </md-button>
+                <md-button aria-label="Google Hangout" class="md-fab md-warn md-raised md-mini">
+                  <md-icon md-svg-src="dist/img/icons/ic_bluetooth_24px.svg" aria-label="Google Hangout"></md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-fab-speed-dial>
+          </div>
+          <br/>
+          <div layout="row" layout-align="space-around">
+            <div layout="column">
+              <b>Direction</b>
+              <md-radio-group ng-model="demo.selectedDirection">
+                <md-radio-button ng-repeat="direction in demo.availableDirections"
+                                 ng-value="direction" class="text-capitalize">
+                  {{direction}}
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column">
+              <b>Open/Closed</b>
+              <md-radio-group ng-model="demo.isOpen">
+                <md-radio-button ng-value="true">Open</md-radio-button>
+                <md-radio-button ng-value="false">Closed</md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column">
+              <b>Animation Modes</b>
+              <md-radio-group ng-model="demo.selectedMode">
+                <md-radio-button ng-repeat="mode in demo.availableModes" ng-value="mode">
+                  {{mode}}
+                </md-radio-button>
+              </md-radio-group>
+            </div>
+          </div>
+          <p class="note">
+            Note that you can also hover over the directive's area or tab through each button to open and
+            activate the speed dial menu.
+          </p>
+        </md-content>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-accent md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Chip elements</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <div>
+            <p>
+              Chips work like tags that you can add to any text field. The are displayed with a nice style and can be
+              inserted or removed.
+            </p>
+          </div>
+          <div class="chipsdemo">
+
+            <div ng-controller="BasicChipsCtrl as ctrl" layout="column">
+              <md-content class="md-padding" layout="column">
+                <h3>Use a custom chip template.</h3>
+                <md-chips ng-model="ctrl.roFruitNames" readonly="ctrl.readonly">
+                  <md-chip-template>
+                    <strong>{{$chip}}</strong>
+                    <em>(fruit)</em>
+                  </md-chip-template>
+                </md-chips>
+                <br/>
+
+                <h3>Use the default chip template.</h3>
+                <md-chips ng-model="ctrl.fruitNames" readonly="ctrl.readonly"></md-chips>
+                <br/>
+
+                <h3>Use Placeholders and override hint texts.</h3>
+                <md-chips
+                        ng-model="ctrl.tags"
+                        readonly="ctrl.readonly"
+                        placeholder="Enter a tag"
+                        delete-button-label="Remove Tag"
+                        delete-hint="Press delete to remove tag"
+                        secondary-placeholder="+Tag"></md-chips>
+                <br/>
+
+                <h3>Display with custom template.</h3>
+                <md-chips class="custom-chips" ng-model="ctrl.vegObjs" readonly="ctrl.readonly"
+                          md-on-append="ctrl.newVeg($chip)">
+                  <md-chip-template>
+                    <span>
+                      <strong>{{$chip.name}}</strong>
+                      <em>({{$chip.type}})</em>
+                    </span>
+                  </md-chip-template>
+                  <button md-chip-remove class="md-primary vegetablechip">
+                    <md-icon md-svg-icon="md-close"></md-icon>
+                  </button>
+                </md-chips>
+                <br/>
+                <md-checkbox ng-model="ctrl.readonly">Readonly</md-checkbox>
+              </md-content>
+            </div>
+
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Dialog</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <div>
+            <p>
+              You can show a Dialog using the service <code>$mdDialog</code>
+            </p>
+
+            <p>
+              Open a dialog over the app's content. Press escape or click outside to close the dialog and
+              send focus back to the triggering button.
+            </p>
+          </div>
+          <div ng-controller="DialogDemoCtrl" class="full" layout="column" layout-margin>
+            <p class="inset text-center">
+              Click to open a dialog
+            </p>
+
+            <div layout="" layout-align="center">
+              <md-button class="btn-width-medium md-primary md-raised" ng-click="showAlert($event)">
+                Alert Dialog
+              </md-button>
+              <div class="space"></div>
+              <div class="gap"></div>
+              <md-button class="btn-width-medium md-primary md-raised" ng-click="showConfirm($event)">
+                Confirm Dialog
+              </md-button>
+              <div class="space"></div>
+              <div class="gap"></div>
+              <md-button class="btn-width-medium md-primary md-raised" ng-click="showAdvanced($event)">
+                Custom Dialog
+              </md-button>
+            </div>
+            <br/>
+            <b layout="row" layout-align="center center" layout-margin>
+              {{alert}}
+            </b>
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-accent md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Progress linear</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <div>
+            <p>
+              Linear progress bars are good for showing normal loading on page transitions
+            </p>
+
+            <p>
+              You can include these via the directive <code>md-progress-linear</code>
+            </p>
+          </div>
+          <div ng-controller="ProgressLinearCtrl" layout="column" layout-margin style="padding:25px;">
+            <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+            <div class="space"></div>
+            <div class="space"></div>
+            <md-progress-linear class="md-warn" md-mode="buffer" value="{{determinateValue}}"
+                                md-buffer-value="{{determinateValue2}}">
+            </md-progress-linear>
+            <div class="space"></div>
+            <div class="space"></div>
+            <md-progress-linear class="md-accent" md-mode="{{mode}}"
+                                value="{{determinateValue}}"></md-progress-linear>
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Toolbar shrink</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="overflow-container">
+          <div ng-controller="ToolbarShrinkCtrl" layout="column" style="height:600px" ng-cloak>
+            <md-toolbar md-scroll-shrink ng-if="true" class="md-accent md-theme-default">
+              <div class="md-toolbar-tools">
+                <h3>
+                  <span>My messages</span>
+                </h3>
+              </div>
+            </md-toolbar>
+            <md-content flex>
+              <md-list>
+                <md-list-item class="md-3-line" ng-repeat="item in todos">
+                  <img ng-src="{{item.face}}" alt="{{item.who}}" class="md-avatar">
+
+                  <div class="md-list-item-text">
+                    <h3>{{item.what}}</h3>
+                    <h4>{{item.who}}</h4>
+
+                    <p>
+                      {{item.notes}}
+                    </p>
+                  </div>
+                  <md-divider inset></md-divider>
+                </md-list-item>
+              </md-list>
+            </md-content>
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Fab toolbar</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <div ng-controller="FabToolbarCtrl" ng-cloak>
+        <md-content class="md-padding">
+          <p>
+            You can use the fabToolbar with a trigger and regular toolbar.
+          </p>
+
+          <p>
+            You may use the <code>md-open</code> attribute to programmatically control whether or not the
+            control is open, and you may set the direction that the toolbar appears using the
+            <code>md-direction</code> attribute. This component currently supports the <code>left</code>
+            and <code>right</code> options.
+          </p>
+        </md-content>
+        <md-content>
+          <md-fab-toolbar md-open="demo.isOpen" count="demo.count"
+                          md-direction="{{demo.selectedDirection}}">
+            <md-fab-trigger class="align-with-text">
+              <md-button aria-label="menu" class="md-fab md-primary">
+                <md-icon md-svg-src="dist/img/icons/ic_menu_24px.svg"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+            <md-toolbar>
+              <md-fab-actions class="md-toolbar-tools">
+                <md-button aria-label="comment" class="md-icon-button">
+                  <md-icon md-svg-src="dist/img/icons/ic_comment_24px.svg"></md-icon>
+                </md-button>
+                <md-button aria-label="label" class="md-icon-button">
+                  <md-icon md-svg-src="dist/img/icons/ic_label_24px.svg"></md-icon>
+                </md-button>
+                <md-button aria-label="photo" class="md-icon-button">
+                  <md-icon md-svg-src="dist/img/icons/ic_photo_24px.svg"></md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-toolbar>
+          </md-fab-toolbar>
+        </md-content>
+        <md-content class="md-padding" layout="column">
+          <div layout="row" layout-align="space-around">
+            <div layout="column">
+              <b>Open/Closed</b>
+              <md-radio-group ng-model="demo.isOpen">
+                <md-radio-button ng-value="true">Open</md-radio-button>
+                <md-radio-button ng-value="false">Closed</md-radio-button>
+              </md-radio-group>
+            </div>
+            <div layout="column">
+              <b>Direction</b>
+              <md-radio-group ng-model="demo.selectedDirection">
+                <md-radio-button ng-value="'left'">Left</md-radio-button>
+                <md-radio-button ng-value="'right'">Right</md-radio-button>
+              </md-radio-group>
+            </div>
+          </div>
+        </md-content>
+      </div>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-accent md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Static tabs</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_slideshow_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <div class="tabsdemoStaticTabs">
+
+        <div ng-controller="StaticTabsDemoCtrl" class="tabsdemoStaticTabs sample">
+          <md-content class="md-padding">
+            <md-tabs class="md-primary" md-selected="data.selectedIndex" md-align-tabs="{{data.bottom ? 'bottom' : 'top'}}">
+              <md-tab id="tab1">
+                <md-tab-label>Item One</md-tab-label>
+                <md-tab-body>
+                  View for Item #1 <br/>
+                  data.selectedIndex = 0;
+                </md-tab-body>
+              </md-tab>
+              <md-tab id="tab2" ng-disabled="data.secondLocked">
+                <md-tab-label>{{data.secondLabel}}</md-tab-label>
+                <md-tab-body>
+                  View for Item #2 <br/>
+                  data.selectedIndex = 1;
+                </md-tab-body>
+              </md-tab>
+              <md-tab id="tab3">
+                <md-tab-label>Item Three</md-tab-label>
+                <md-tab-body>
+                  View for Item #3 <br/>
+                  data.selectedIndex = 2;
+                </md-tab-body>
+              </md-tab>
+            </md-tabs>
+          </md-content>
+          <div class="md-padding" layout="row" layout-sm="column" layout-align="left center"
+               style="padding-top: 0;">
+            <md-checkbox ng-model="data.secondLocked" aria-label="Disable item two?" style="margin: 5px;">
+              Disable item two?
+            </md-checkbox>
+            <md-checkbox ng-model="data.bottom" aria-label="Align tabs to bottom?" style="margin: 5px;">
+              Align tabs to bottom?
+            </md-checkbox>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

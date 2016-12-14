@@ -1,0 +1,99 @@
+<section class="page-padding">
+
+  <div>
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Material design flex grid system fluid</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_grid_on_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <p>
+            A layout child's flex attribute can be given an integer value from 0-100. The element will stretch to the
+            percentage of available space matching the value.
+          </p>
+
+          <p>
+            The flex attribute value is restricted to 33, 66, and multiples of five.
+            For example: flex="5", flex="20", "flex="33", flex="50", flex="66", flex="75", ....
+          </p>
+
+          <div layout="row" layout-wrap>
+            <div flex="33" class="widget-container-empty bg-success">
+              [flex="33"]
+            </div>
+            <div flex="55" class="widget-container-empty bg-warning">
+              [flex="55"]
+            </div>
+            <div flex class="widget-container-empty bg-danger">
+              [flex]
+            </div>
+            <div flex="60" class="widget-container-empty bg-warning">
+              [flex="60"]
+            </div>
+            <div flex="40" class="widget-container-empty bg-success">
+              [flex="40"]
+            </div>
+            <div flex="20" class="widget-container-empty bg-info">
+              [flex="20"]
+            </div>
+            <div flex="30" class="widget-container-empty bg-danger">
+              [flex="30"]
+            </div>
+            <div flex="50" class="widget-container-empty bg-success">
+              [flex="50"]
+            </div>
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div>
+    <div class="md-whiteframe-z1">
+
+      <md-toolbar class="md-accent md-theme-default md-whiteframe-z1">
+        <div class="md-toolbar-tools">
+          <h3>Material design flex grid system</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_grid_on_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body">
+          <p>
+            To customize the size and position of elements in a layout, use the <span class="color-primary">flex</span>, <span
+                  class="color-primary">offset</span>, and <span class="color-primary">flex-order</span> attributes.
+          </p>
+
+          <div layout="row">
+            <div flex class="widget-container-empty bg-warning">
+              [flex]
+            </div>
+            <div flex class="widget-container-empty bg-info">
+              [flex]
+            </div>
+            <div flex hide-sm class="widget-container-empty bg-success">
+              [flex hides on small]
+            </div>
+          </div>
+        </div>
+      </md-content>
+
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+</section>

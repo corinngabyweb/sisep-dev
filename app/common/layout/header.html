@@ -1,0 +1,67 @@
+<md-toolbar class="header-toolbar" layout="row">
+  <div class="md-toolbar-tools">
+    <md-button class="header-toggle mfb-component md-icon-button" aria-label="Settings" ng-click="navigationController.toggleLeft()">
+      <span class="md-toggle-icon header__menu-button" style="">
+        <md-icon class="mfb-component__main-icon--resting" md-svg-icon="dist/img/icons/ic_menu_24px.svg"></md-icon>
+        <md-icon class="mfb-component__main-icon--active" md-svg-icon="dist/img/icons/ic_arrow_back_24px.svg"></md-icon>
+      </span>
+    </md-button>
+    <h1 flex="60" flex-gt-md="15"  hide-gt-sm class="app-name">{{app_name}}</h1>
+    <!--<div class="header-autocomplete" flex="60" hide-sm hide-md data-ng-controller="siteAutocompleteCtrl as autocompletectrl">
+      <form ng-submit="$event.preventDefault()">
+        <md-autocomplete
+                ng-disabled="autocompletectrl.isDisabled"
+                md-no-cache="autocompletectrl.noCache"
+                md-selected-item="autocompletectrl.selectedItem"
+                md-search-text-change="autocompletectrl.searchTextChange(autocompletectrl.searchText)"
+                md-search-text="autocompletectrl.searchText"
+                md-selected-item-change="autocompletectrl.selectedItemChange(item)"
+                md-items="item in autocompletectrl.querySearch(autocompletectrl.searchText)"
+                md-item-text="item.display"
+                md-min-length="0"
+                placeholder="Search for a teammates or a page you want to go" class="header__autocomplete">
+          <md-item-template class="site-autocomplete">
+            <a class="site-autocomplete__link" ng-href="#/{{item.url}}">
+              <img ng-show="item.image != null" alt="user" class="site-autocomplete__image" ng-src="{{item.image}}" />
+              <md-icon ng-show="item.icon != null" md-svg-src="{{item.icon}}" class="site-autocomplete__icon md-accent"></md-icon>
+              <span md-highlight-text="autocompletectrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+            </a>
+          </md-item-template>
+          <md-not-found>
+            No matches found for "{{autocompletectrl.searchText}}".
+          </md-not-found>
+        </md-autocomplete>
+      </form>
+    </div>-->
+    <span flex="65"></span>
+    
+    
+    <div flex="20" ng-controller="HeaderNavMenu as headermenuctrl">
+      <md-menu style="float: right; margin-right: 20px">
+        <md-button aria-label="Open phone interactions menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+          <img class="header__user-picture" alt="user-picture" src="dist/images/user_square.jpg" />
+          <md-tooltip md-direction="bottom">
+          Olá, elisa!
+        </md-tooltip>
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button disabled="disabled">
+              <img style= "margin-right: 10px;" class="header__user-picture" alt="user-picture" src="dist/images/user_square.jpg" />
+              elisa
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-click="navigationController.deslogar()">
+              <md-icon class="md-primary md-theme-default" md-svg-icon="dist/img/icons/ic_dialpad_24px.svg" md-menu-align-target></md-icon>
+              Sair
+            </md-button>
+          </md-menu-item>
+          
+          
+        </md-menu-content>
+      </md-menu>
+    </div>
+  </div>
+</md-toolbar>

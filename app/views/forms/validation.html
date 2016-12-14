@@ -1,0 +1,315 @@
+<section class="page-padding row" data-ng-controller="formConstraintsCtrl">
+
+  <div class="col-md-6">
+    <section class="md-content-section">
+
+      <div class="md-whiteframe-z1">
+        <md-toolbar class="md-accent">
+          <div class="md-toolbar-tools">
+            Constraints
+          </div>
+        </md-toolbar>
+
+        <md-content>
+          <div class="md-content__body">
+            <form name="form_constraints" class="form-validation" novalidate data-ng-submit="submitForm()">
+              <div class="form-group">
+                <md-input-container>
+                  <label>Required</label>
+                  <input type="text" class="form-control" required data-ng-model="form.required">
+                </md-input-container>
+
+                <md-checkbox required class="md-primary" ng-model="form.required_checkbox" aria-label="Checkbox 1">
+                  You need to agree to the Policy
+                </md-checkbox>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Min length 3</label>
+                  <input type="text"
+                         class="form-control"
+                         required
+                         data-ng-minlength=3
+                         data-ng-model="form.minlength"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Max length 10</label>
+                  <input type="text"
+                         class="form-control"
+                         required
+                         data-ng-maxlength=10
+                         data-ng-model="form.maxlength"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Length from 3 to 10</label>
+                  <input type="text"
+                         class="form-control"
+                         required
+                         data-ng-minlength=3
+                         data-ng-maxlength=10
+                         data-ng-model="form.length_rage"
+                          >
+                </md-input-container>
+              </div>
+              <div layout="row">
+                <div flex="50">
+
+                  <md-input-container>
+                    <label>Type something</label>
+                    <input type="text"
+                           class="form-control"
+                           required
+                           name="type_something"
+                           data-ng-trim='false'
+                           data-ng-model="form.type_something"
+                            >
+                  </md-input-container>
+                </div>
+                <div flex="50">
+                  <md-input-container>
+                    <label>Confirm type</label>
+                    <input type="text"
+                           class="form-control"
+                           required
+                           name="confirm_type"
+                           data-ng-trim='false'
+                           data-ng-model="form.confirm_type"
+                           data-password-verify="form.type_something"
+                            >
+                  </md-input-container>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <md-input-container>
+                  <label>Equal to "foo"</label>
+                  <input type="text"
+                         class="form-control"
+                         required
+                         data-ng-model="form.foo"
+                         data-ng-pattern="/^foo$/"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Email</label>
+                  <input type="email"
+                         class="form-control"
+                         required
+                         data-ng-model="form.email"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Url</label>
+                  <input type="url"
+                         class="form-control"
+                         required
+                         data-ng-model="form.url"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Must be a number</label>
+                  <input type="number"
+                         class="form-control"
+                         required
+                         name="form.num"
+                         data-ng-model="form.num"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Number min value 3</label>
+                  <input type="number"
+                         class="form-control"
+                         required
+                         data-min=3
+                         data-ng-model="form.minVal"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Number max value 20</label>
+                  <input type="number"
+                         class="form-control"
+                         required
+                         data-max=20
+                         data-ng-model="form.maxVal"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Number value between 3 and 20</label>
+                  <input type="number"
+                         class="form-control"
+                         required
+                         data-min=3
+                         data-max=20
+                         data-ng-model="form.valRange"
+                          >
+                </md-input-container>
+              </div>
+              <div class="form-group">
+                <md-input-container>
+                  <label>Match a pattern, e.g. hex color code</label>
+                  <input type="text"
+                         class="form-control"
+                         placeholder="Hex color code here, like #e5e5e5, or #fff"
+                         required
+                         data-ng-pattern="/^#(?:[0-9a-fA-F]{3}){1,2}$/"
+                         data-ng-model="form.pattern"
+                          >
+                </md-input-container>
+              </div>
+
+              <md-button class="btn-width-medium md-raised md-primary" data-ng-disabled="!canSubmit()">Submit</md-button>
+              <md-button class="btn-width-medium md-primary" data-ng-disabled="!canRevert()" data-ng-click="revert()">
+                Revert changes
+              </md-button>
+
+              <div class="callout-elem callout-elem-info">
+                <p>Submit button will be active only when all fields are valid.</p>
+
+                <p>Revert button will be active only when one or more fields is changed.</p>
+              </div>
+            </form>
+          </div>
+        </md-content>
+      </div>
+
+    </section>
+  </div>
+
+  <div class="col-md-6">
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent md-theme-default">
+        <div class="md-toolbar-tools">
+          <h3>Signin form</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button" aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_lock_outline_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body extra-padding">
+
+          <div data-ng-controller="signinCtrl">
+            <form name="form_signin" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+              <md-input-container class="md-accent" md-no-float>
+                <md-icon md-svg-src="dist/img/icons/ic_person_24px.svg"></md-icon>
+                <input placeholder="email" type="email"
+                       class="form-control"
+                       required
+                       data-ng-model="user.email">
+              </md-input-container>
+              <md-input-container class="md-accent" md-no-float>
+                <md-icon md-svg-src="dist/img/icons/ic_lock_24px.svg"></md-icon>
+                <input placeholder="password" type="password"
+                       class="form-control"
+                       required
+                       data-ng-model="user.password">
+              </md-input-container>
+              <div>
+                <md-button class="btn-width-medium md-raised md-primary" data-ng-disabled="!canSubmit()">Submit</md-button>
+                <md-button class="btn-width-medium md-primary" data-ng-disabled="!canRevert()" data-ng-click="revert()">Revert changes</md-button>
+
+                <div class="callout-elem callout-elem-info">
+                  <p>Submit button will be active only when all fields are valid.</p>
+                  <p>Revert button will be active only when one or more fields is changed.</p>
+                </div>
+                <div class="divider"></div>
+                <div class="alert alert-info" data-ng-show="showInfoOnSubmit">This is just for demo. In real project, you will submit form with AJAX :)</div>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent md-theme-default">
+        <div class="md-toolbar-tools">
+          <h3>Signin form</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button" aria-label="View Source">
+            <md-icon md-svg-icon="dist/img/icons/ic_lock_outline_24px.svg"></md-icon>
+          </button>
+        </div>
+      </md-toolbar>
+      <md-content>
+        <div class="md-content__body extra-padding">
+
+          <div data-ng-controller="signupCtrl">
+            <form name="form_signup" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+              <div class="form-group">
+                <md-input-container>
+                  <label>User Name</label>
+                  <input  type="text"
+                          class="form-control"
+                          placeholder="Min length 2, Max length 30"
+                          data-ng-model="user.name"
+                          required
+                          data-ng-minlength="2"
+                          data-ng-maxlength="30">
+                </md-input-container>
+
+                <md-input-container>
+                  <label>Email</label>
+                  <input type="email"
+                         class="form-control"
+                         data-ng-model="user.email"
+                         required>
+                </md-input-container>
+                <md-input-container>
+                  <label>Password</label>
+                  <input type="password"
+                         class="form-control"
+                         placeholder="min length 6"
+                         data-ng-model="user.password"
+                         required
+                         data-ng-minlength="6">
+                </md-input-container>
+                <md-input-container>
+                  <label>Age</label>
+                  <input type="number"
+                         class="form-control"
+                         placeholder="Min value 0, max value 100"
+                         data-ng-model="user.age"
+                         required
+                         data-min="0"
+                         data-max="100">
+                </md-input-container>
+              </div>
+              <md-button class="btn-width-medium md-raised md-primary" data-ng-disabled="!canSubmit()">Submit</md-button>
+
+              <div class="callout-elem callout-elem-info">
+                <p>Submit button will be active only when all fields are valid.</p>
+              </div>
+              <div class="divider"></div>
+              <div class="alert alert-info" data-ng-show="showInfoOnSubmit">This is just for demo. In real project, you will submit form with AJAX :)</div>
+            </form>
+          </div>
+
+        </div>
+      </md-content>
+    </div>
+  </div>
+
+</section>

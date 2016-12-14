@@ -1,0 +1,375 @@
+<section class="page-padding">
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="md-whiteframe-z1">
+        <div class="md-content__body">
+
+          <div data-ng-controller="chartingCtrl">
+            <h3>{{easypiesquare1.name}}</h3>
+
+            <br/>
+
+            <div class="text-center">
+              <div easypiechart options="easypiesquare1.options" percent="easypiesquare1.percent" class="easypiechart">
+              <span class="pie-percent">
+                <div class="countTo_small" data-ng-controller="countTo">
+                  <span count-to="{{easypiesquare1.percent}}" value="0" duration="2"></span>%
+                </div>
+              </span>
+
+              </div>
+            </div>
+
+            <br/>
+
+            <h4><strong>5</strong> dued tasks remaining</h4>
+
+            <p>
+              Completing these tasks is number one priority
+            </p>
+          </div>
+
+          <div class="md-content__menu">
+            <md-menu md-offset="-130 20">
+              <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-svg-icon="dist/img/icons/ic_more_vert_24px.svg"></md-icon>
+              </md-button>
+              <md-menu-content width="3">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span> {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="md-whiteframe-z1">
+        <div class="md-content__body">
+
+          <div data-ng-controller="chartingCtrl">
+            <h3>{{easypiewater.name}}</h3>
+
+            <br/>
+
+            <div class="text-center">
+              <div easypiechart options="easypiewater.options" percent="easypiewater.percent" class="easypiechart">
+              <span class="pie-percent">
+                <div class="countTo_small" data-ng-controller="countTo">
+                  <span count-to="{{easypiewater.percent}}" value="0" duration="4"></span>%
+                </div>
+              </span>
+              </div>
+            </div>
+
+            <br/>
+
+            <h4><strong>5</strong> dued tasks remaining</h4>
+
+            <p>
+              Completing these tasks is number one priority
+            </p>
+          </div>
+
+          <div class="md-content__menu">
+            <md-menu md-offset="-130 20">
+              <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-svg-icon="dist/img/icons/ic_more_vert_24px.svg"></md-icon>
+              </md-button>
+              <md-menu-content width="3">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span> {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="md-whiteframe-z1">
+        <div class="md-content__body">
+
+          <div data-ng-controller="flotChartCtrl">
+            <h3>Sales by category</h3>
+
+            <br/>
+
+            <div class="text-center">
+              <div style="width: 100%; height: 140px;" data-flot-chart
+                   data-data="donutChart.data"
+                   data-options="donutChart.options"
+                   style="width: 100%; height: 140px;"
+              ></div>
+            </div>
+
+            <br/>
+
+            <h4><strong>100</strong> total sales</h4>
+
+            <p>
+              Completing these tasks is number one priority
+            </p>
+          </div>
+
+          <div class="md-content__menu">
+            <md-menu md-offset="-130 20">
+              <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-svg-icon="dist/img/icons/ic_more_vert_24px.svg"></md-icon>
+              </md-button>
+              <md-menu-content width="3">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span> {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="md-whiteframe-z1">
+        <div class="md-content__body">
+
+          <div data-ng-controller="chartjsCtrl">
+            <h3>Area Charts</h3>
+
+            <br/>
+
+            <div class="text-center">
+              <chart class="chartjs chart-js--small" data-data="chartjsRadar" data-type="Radar" value="myChart"></chart>
+            </div>
+
+            <br/>
+
+            <h4><strong>5</strong> dued tasks remaining</h4>
+
+            <p>
+              Completing these tasks is number one priority
+            </p>
+          </div>
+
+          <div class="md-content__menu">
+            <md-menu md-offset="-130 20">
+              <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-svg-icon="dist/img/icons/ic_more_vert_24px.svg"></md-icon>
+              </md-button>
+              <md-menu-content width="3">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span> {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="md-whiteframe-z1">
+        <div class="md-content__body">
+
+          <div data-ng-controller="gaugeCtrl">
+            <h3>Gauge Charts</h3>
+
+            <br/>
+
+            <div class="text-center">
+              <canvas data-gauge-chart
+                      data-gauge-data="gaugeHome.gaugeData"
+                      data-gauge-options="gaugeHome.gaugeOptions"
+                      style="width: 220px; height: 110px; "
+              ></canvas>
+            </div>
+
+            <br/>
+
+            <h4><strong>5</strong> dued tasks remaining</h4>
+
+            <p>
+              Completing these tasks is number one priority
+            </p>
+          </div>
+
+          <div class="md-content__menu">
+            <md-menu md-offset="-130 20">
+              <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-svg-icon="dist/img/icons/ic_more_vert_24px.svg"></md-icon>
+              </md-button>
+              <md-menu-content width="3">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span> {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+        <div class="md-content__footer gauge__footer-progress">
+          <div ng-controller="ProgressLinearCtrl" layout="column" layout-margin style="padding:25px;">
+            <md-progress-linear md-mode="indeterminate"></md-progress-linear>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="md-whiteframe-z1">
+        <div class="md-content__body">
+
+          <div data-ng-controller="chartjsCtrl">
+            <h3>Polar charts</h3>
+
+            <br/>
+
+            <div class="text-center">
+              <chart class="chartjs home-chart-polar" data-data="chartjsPolarArea" data-type="PolarArea"
+                     value="myChart"></chart>
+            </div>
+
+            <br/>
+
+            <h4><strong>5</strong> dued tasks remaining</h4>
+
+            <p>
+              Completing these tasks is number one priority
+            </p>
+          </div>
+
+          <div class="md-content__menu">
+            <md-menu md-offset="-130 20">
+              <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-svg-icon="dist/img/icons/ic_more_vert_24px.svg"></md-icon>
+              </md-button>
+              <md-menu-content width="3">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span> {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="row">
+
+    <div class="col-md-8">
+      <div class="md-whiteframe-z1">
+        <md-toolbar class="md-primary md-theme-default md-whiteframe-z1">
+          <div class="md-toolbar-tools">
+            <div class="map-image">
+              <img src="dist/images/team3.jpg" alt="">
+            </div>
+            <div class="map-name">
+              <h5>Philip Gragoline</h5>
+            </div>
+            <span flex></span>
+            <md-button class="md-icon-button" aria-label="More">
+              <md-icon md-svg-icon="dist/img/icons/ic_map_24px.svg"></md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="More">
+              <md-icon md-svg-icon="dist/img/icons/ic_my_location_24px.svg"></md-icon>
+            </md-button>
+          </div>
+        </md-toolbar>
+        <md-content>
+          <div class="md-content__body">
+            <div data-ng-controller="jqvmapCtrl">
+              <div style="width: 100%; height: 300px;" class="ui-map" ui-jqvmap options="worldMap"></div>
+            </div>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+              industry's standard dummy text ever since the 1500s
+            </p>
+          </div>
+        </md-content>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="md-whiteframe-z1">
+        <div class="md-content__body">
+
+          <div data-ng-controller="flotChartCtrl">
+            <h3>Point charting</h3>
+
+            <br/>
+
+            <div class="text-center">
+              <div data-flot-chart
+                   data-data="areapoints.data"
+                   data-options="areapoints.options"
+                   style="width: 100%; height: 200px;"
+              ></div>
+            </div>
+
+            <br/>
+
+            <h4><strong>5</strong> dued tasks remaining</h4>
+
+            <p>
+              Completing these tasks is number one priority
+            </p>
+          </div>
+
+          <div class="md-content__menu">
+            <md-menu md-offset="-130 20">
+              <md-button aria-label="Open demo menu" class="md-icon-button" ng-click="$mdOpenMenu($event)">
+                <md-icon md-svg-icon="dist/img/icons/ic_more_vert_24px.svg"></md-icon>
+              </md-button>
+              <md-menu-content width="3">
+                <md-menu-item ng-repeat="item in [1, 2, 3]">
+                  <md-button ng-click="ctrl.announceClick($index)"><span md-menu-align-target>Option</span> {{item}}
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </div>
+
+        </div>
+        <div class="md-content__footer">
+          <div layout="row">
+            <md-button aria-label="Button" class="md-accent md-raised theme-default">
+              <md-icon class="md-accent" md-svg-src="dist/img/icons/ic_inbox_24px.svg"></md-icon>
+              Send progress
+            </md-button>
+            <span flex></span>
+            <md-icon class="md-accent" md-svg-src="dist/img/icons/ic_trending_up_24px.svg"></md-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+</section>

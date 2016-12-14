@@ -1,0 +1,49 @@
+<div class="row">
+	<div class="col-sm-12">
+    <div class="form-group" ng-controller="SelectCtrl">
+      <label>Entidade Empregadora</label>
+        <select 
+          class="form-control" 
+          aria-label="Entidade Empregadora" 
+          ng-model="associado.entidade">
+            <option ng-repeat="entidade in entidades" value="{{entidade.opt}}">{{entidade.val}}
+            </option>
+        </select>      
+      </div>
+  </div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12">
+    <div class="form-group" ng-controller="SelectCtrl">
+      <label>Cargo</label>
+        <select 
+          class="form-control" 
+          aria-label="Entidade Empregadora" 
+          ng-model="associado.cargo">
+            <option>Selecione o Cargo</option>
+        </select>      
+      </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Data de admissão</label>
+        <input type="text"
+           class="form-control"
+           data-ng-model="associado.nome">
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="form-group">
+      <label>Salário bruto</label>
+        <input type="text"
+        	ui-money-mask="2"
+           	class="form-control"
+           	data-ng-model="associado.salario">
+    </div>
+  </div>
+    
+</div>

@@ -1,0 +1,142 @@
+<section class="page-padding row" data-ng-controller="flotChartCtrl">
+
+  <div class="col-md-6">
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Line Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div data-flot-chart
+               data-data="line1.data"
+               data-options="line1.options"
+               style="width: 100%; height: 300px;"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Area Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div data-flot-chart
+               data-data="area.data"
+               data-options="area.options"
+               style="width: 100%; height: 300px;"
+                  ></div>
+        </div>
+      </md-content>
+
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Pie Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div data-flot-chart
+               data-data="pieChart.data"
+               data-options="pieChart.options"
+               style="width: 100%; height: 300px;"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Realtime Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+
+          <div data-ng-controller="flotChartCtrl.realtime">
+            <div data-flot-chart-realtime
+                 data-type="realtime"
+                 style="width: 100%; height: 300px;"
+                    ></div>
+          </div>
+
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Stacked bar Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div data-flot-chart
+               data-data="barChart.data"
+               data-options="barChart.options"
+               style="width: 100%; height: 300px;"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>
+            Doughnut Chart
+          </h3>
+        </div>
+      </md-toolbar>
+
+      <md-content>
+        <div class="md-content__body">
+          <div data-flot-chart
+               data-data="donutChart.data"
+               data-options="donutChart.options"
+               style="width: 100%; height: 300px;"
+                  ></div>
+        </div>
+      </md-content>
+    </div>
+
+
+  </div>
+
+</section>

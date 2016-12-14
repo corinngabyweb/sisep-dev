@@ -1,0 +1,119 @@
+<section class="page-padding" >
+  <div>
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>Cadastrar Associado </h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="Adicionar Novo">
+             <md-icon ng-style="{color: white}"
+            aria-label="Adicionar Associado"
+            class="fa fa-search fa-2x text-white">
+        </md-icon>
+        <md-tooltip md-direction="bottom">
+          Ver Todos
+        </md-tooltip>
+          </button>
+          <button class="md-icon-button md-button" aria-label="Relatórios">
+             <md-icon ng-style="{color: white}"
+            aria-label="Relatórios"
+            class="fa fa-line-chart fa-2x text-white">
+        </md-icon>
+        	<md-tooltip md-direction="bottom">
+            Relatórios
+          </md-tooltip>
+          </button>
+        </div>
+      </md-toolbar>
+
+      <md-content class="md-padding">
+        
+      <div class="md-content__body">
+      	<div class="row">
+          <div class="col-md-3">
+
+            <img src="dist/images/user_square.jpg" class="img-responsive img-thumbnail" style="width: 120px; height: 120px; display: block; margin: 0 auto;" alt="Foto de Fulano">
+            <md-button aria-label="Button" style="display: block;margin: 5px auto" class="btn-width-medium md-raised md-primary" ng-click="navigationController.isDemoFunction()">
+              <b class="fa fa-camera"></b> Tirar Foto
+            </md-button>
+
+            
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group" ng-controller="SelectCtrl">
+                  <label>Data de cadastro</label>
+                  <input type="text" 
+                    class="form-control" 
+                    readonly
+                    data-ng-model="associado.resp_cadastro" />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group" ng-controller="SelectCtrl">
+                  <md-checkbox ng-model="associado.ativo" >
+                    Filiado ativo
+                  </md-checkbox>
+                </div>
+              </div>
+            </div>
+              
+              <div class="row">
+              <div class="col-md-12">
+                <div class="form-group" ng-controller="SelectCtrl">
+                  <md-checkbox ng-model="associado.bloqueado" >
+                    Filiado bloqueado
+                  </md-checkbox>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+          <div class="col-md-9">
+            <div layout="column" data-ng-controller="StaticTabsDemoCtrl">
+              <md-tabs md-dynamic-height class="md-primary" md-align-tabs="top">
+              <md-tab id="tab1">
+                <md-tab-label>Informações Principais</md-tab-label>
+                <md-tab-body >
+                  <div style="padding: 20px 15px" ng-include="'app/views/associado/tab-info_principais.html'"></div>
+                </md-tab-body>
+              </md-tab>
+              <md-tab id="tab2">
+                <md-tab-label>Informações de Contato</md-tab-label>
+                <md-tab-body>
+                  <div style="padding: 20px 15px" ng-include="'app/views/associado/tab-info_contato.html'"></div>
+                </md-tab-body>
+              </md-tab>
+              <md-tab id="tab3">
+                <md-tab-label>Informações de Endereço</md-tab-label>
+                <md-tab-body style="padding: 30px 15px">
+                  <div style="padding: 20px 15px" ng-include="'app/views/associado/tab-info_endereco.html'"></div>
+                </md-tab-body>
+              </md-tab>
+              <md-tab id="tab4">
+                <md-tab-label>Informações de Empresa</md-tab-label>
+                <md-tab-body style="padding: 30px 15px">
+                  <div style="padding: 20px 15px" ng-include="'app/views/associado/tab-info_empresa.html'"></div>
+                </md-tab-body>
+              </md-tab>
+              
+            </md-tabs>  
+            <md-button aria-label="Button" class="btn-width-medium md-raised md-primary" ng-click="navigationController.isDemoFunction()">
+                Próximo
+              </md-button>  
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+        
+      </md-content>
+    </div>
+  </div>
+
+  <br/>
+
+</section>

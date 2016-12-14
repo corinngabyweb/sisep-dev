@@ -1,0 +1,139 @@
+<section class="page-padding" data-ng-controller="tableCtrl">
+
+  <div>
+    <div class="md-whiteframe-z1">
+      <md-toolbar class="md-accent">
+        <div class="md-toolbar-tools">
+          <h3>Ver todos os associados</h3>
+          <span class="flex"></span>
+          <button class="md-icon-button md-button " aria-label="Adicionar Novo">
+             <md-icon ng-style="{color: white}"
+            aria-label="Adicionar Associado"
+            class="fa fa-user-plus fa-2x text-white">
+        </md-icon>
+        <md-tooltip md-direction="bottom">
+          Adicionar Novo
+        </md-tooltip>
+          </button>
+          <button class="md-icon-button md-button" aria-label="Adicionar Novo">
+             <md-icon ng-style="{color: white}"
+            aria-label="Relatórios"
+            class="fa fa-line-chart fa-2x text-white">
+        </md-icon>
+        	<md-tooltip md-direction="bottom">
+          Relatórios
+        </md-tooltip>
+          </button>
+        </div>
+      </md-toolbar>
+
+      <md-content class="md-padding">
+        
+          <div class="table-filters">
+            
+			<div layout layout-sm="column">
+            <md-input-container flex>
+              <label>Digite o termo para busca</label>
+              <input type="text"
+                     class="form-control"
+                     data-ng-model="searchKeywords"
+                     data-ng-keyup="search()">
+                     <md-tooltip md-direction="bottom">
+          Você pode buscar por ID, Nome, Matrícula ou Empregador
+        </md-tooltip>
+          	</md-input-container>
+          </div>
+        	
+      <div class="md-content__body table-dynamic">
+      	<section class="table-flip-scroll">
+        <table class="table table-bordered table-striped cf">
+          <thead>
+          <tr>
+        	<th>
+        		<div class="th">
+              		ID
+                    <span class="glyphicon glyphicon-chevron-up"
+                          data-ng-click=" order('id') "
+                          data-ng-class="{active: row == 'id'}"></span>
+                    <span class="glyphicon glyphicon-chevron-down"
+                          data-ng-click=" order('-id') "
+                          data-ng-class="{active: row == '-id'}"></span>
+            </div></th>
+            <th><div class="th">
+              Nome
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('nome') "
+                              data-ng-class="{active: row == 'nome'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-nome') "
+                              data-ng-class="{active: row == '-nome'}"></span>
+            </div></th>
+            <th><div class="th">
+              Matrícula
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('matricula') "
+                              data-ng-class="{active: row == 'matricula'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-matricula') "
+                              data-ng-class="{active: row == '-matricula'}"></span>
+            </div></th>
+            <th><div class="th">
+              Empregador
+                        <span class="glyphicon glyphicon-chevron-up"
+                              data-ng-click=" order('empregador') "
+                              data-ng-class="{active: row == 'empregador'}"></span>
+                        <span class="glyphicon glyphicon-chevron-down"
+                              data-ng-click=" order('-empregador') "
+                              data-ng-class="{active: row == '-empregador'}"></span>
+            </div></th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr data-ng-repeat="associados in currentPageStores">
+            <td>{{associados.id}}</td>
+            <td>{{associados.nome}}</td>
+            <td>{{associados.matricula}}</td>
+            <td>{{associados.empregador}}</td>
+          </tr>
+          <tr>
+          	<td colspan="4" class="text-center" ng-if="currentPageStores.length < 1">
+          		<span class="text-center">Nenhum resultado encontrado!</span>
+          	</td>
+          </tr>
+          </tbody>
+        </table>
+        </section>
+
+        <footer class="table-footer">
+          <div class="row">
+            <div class="col-md-6 page-num-info">
+                    <span>
+                        Mostrando
+                        <select data-ng-model="numPerPage"
+                                data-ng-options="num for num in numPerPageOpt"
+                                data-ng-change="onNumPerPageChange()">
+                        </select>
+                        resultados
+                    </span>
+            </div>
+            <div class="col-md-6 text-center pagination-container">
+              <pagination class="pagination-sm"
+                          ng-model="currentPage"
+                          total-items="filteredStores.length"
+                          max-size="4"
+                          ng-change="select(currentPage)"
+                          items-per-page="numPerPage"
+                          rotate="false"
+                          boundary-links="true"></pagination>
+            </div>
+          </div>
+        </footer>
+      </div>
+        </div>
+      </md-content>
+    </div>
+  </div>
+
+  <br/>
+
+</section>

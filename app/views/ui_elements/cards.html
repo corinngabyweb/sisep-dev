@@ -1,0 +1,219 @@
+<section class="page-padding row" data-ng-controller="AudioJsCtrl">
+
+  <div class="col-md-4">
+    <md-card>
+      <img src="dist/images/background/social1.png" alt="Washed Out">
+      <md-card-content>
+        <div ng-controller="HomeFabCtrl" layout="column">
+          <div class="lock-size homeSpeedDial" layout="row" layout-align="center center">
+            <md-fab-speed-dial md-open="demo.isOpen" md-direction="{{demo.selectedDirection}}"
+                               ng-class="demo.selectedMode">
+              <md-fab-trigger>
+                <md-button aria-label="menu" class="md-fab md-primary">
+                  <md-icon md-svg-src="dist/img/icons/ic_menu_24px.svg"></md-icon>
+                </md-button>
+              </md-fab-trigger>
+              <md-fab-actions>
+                <md-button aria-label="Airplane" class="md-fab md-raised md-mini md-accent">
+                  <md-icon md-svg-src="dist/img/icons/ic_airplanemode_off_24px.svg"></md-icon>
+                </md-button>
+                <md-button aria-label="Bluetooth" class="md-fab md-raised md-mini md-warn">
+                  <md-icon md-svg-src="dist/img/icons/ic_bluetooth_24px.svg"></md-icon>
+                </md-button>
+                <md-button aria-label="Google Inbox" class="md-fab md-raised md-mini md-primary">
+                  <md-icon md-svg-src="dist/img/icons/ic_inbox_24px.svg"></md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-fab-speed-dial>
+          </div>
+        </div>
+        <h2>I want to ride my bike</h2>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+        <div flex>
+          <md-button aria-label="Button" class="md-accent md-raised theme-default">
+            <md-icon class="md-accent" md-svg-src="dist/img/icons/ic_inbox_24px.svg"></md-icon>
+            Send a message
+          </md-button>
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card>
+      <md-card-content class="card-success">
+        <div class="card-bg-icon">
+          <md-icon md-svg-src="dist/img/icons/ic_hearing_48px.svg"></md-icon>
+        </div>
+        <md-icon md-svg-src="dist/img/icons/ic_hearing_48px.svg"></md-icon>
+
+        <h3>Paracosm</h3>
+
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card class="card-danger card-music">
+      <img src="dist/images/background/bg_music1.png" alt="Washed Out">
+      <md-card-content>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+
+        <div class="audiojs">
+          <audio src="dist/mp3/ethnic.mp3" preload="auto"></audio>
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card class="card-background-image bg1">
+      <md-card-content>
+        <md-icon md-svg-src="dist/img/icons/ic_insert_comment_48px.svg"></md-icon>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+      </md-card-content>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div class="col-md-4">
+    <md-card>
+      <img src="dist/images/background/social2.png" alt="Washed Out">
+      <md-card-content>
+        <md-button class="md-fab middle-right md-warning" aria-label="Eat cake">
+          <md-icon md-svg-src="dist/img/icons/ic_network_wifi_48px.svg"></md-icon>
+        </md-button>
+        <h2>Paracosm</h2>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+        <div flex>
+          <md-button class="md-button md-raised md-primary ">Action1</md-button>
+          <md-button class="md-button md-raised md-warning md-button ">Action1</md-button>
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card>
+      <md-card-content class="card-info">
+        <div class="card-bg-icon">
+          <md-icon md-svg-src="dist/img/icons/ic_add_alarm_48px.svg"></md-icon>
+        </div>
+        <md-icon md-svg-src="dist/img/icons/ic_add_alarm_48px.svg"></md-icon>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card class="card-warning card-music">
+      <img src="dist/images/background/bg_music2.png" alt="Washed Out">
+      <md-card-content>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+
+        <div class="audiojs">
+          <audio src="dist/mp3/pop.mp3" preload="auto"></audio>
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card class="card-background-image bg2">
+      <md-card-content>
+        <md-icon md-svg-src="dist/img/icons/ic_redeem_48px.svg"></md-icon>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+      </md-card-content>
+      </md-card-content>
+    </md-card>
+  </div>
+
+  <div class="col-md-4">
+    <md-card>
+      <img src="dist/images/background/social3.png" alt="Washed Out">
+      <md-card-content>
+        <md-button class="md-fab middle-right md-danger" aria-label="Eat cake">
+          <md-icon md-svg-src="dist/img/icons/ic_message_48px.svg"></md-icon>
+        </md-button>
+        <h2>Paracosm</h2>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+        <div flex>
+          <md-button class="md-button md-raised md-primary ">Action1</md-button>
+          <md-button class="md-button md-raised md-info md-button ">Action1</md-button>
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card>
+      <md-card-content class="card-warning">
+        <div class="card-bg-icon">
+          <md-icon md-svg-src="dist/img/icons/ic_redeem_48px.svg"></md-icon>
+        </div>
+        <md-icon md-svg-src="dist/img/icons/ic_redeem_48px.svg"></md-icon>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card class="card-info card-music">
+      <img src="dist/images/background/bg_music3.png" alt="Washed Out">
+      <md-card-content>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+
+        <div class="audiojs">
+          <audio src="dist/mp3/classic.mp3" preload="auto"></audio>
+        </div>
+      </md-card-content>
+    </md-card>
+
+    <div class="divider"></div>
+
+    <md-card class="card-background-image bg3">
+      <md-card-content>
+        <md-icon md-svg-src="dist/img/icons/ic_camera_48px.svg"></md-icon>
+        <h3>Paracosm</h3>
+        <p>
+          The titles of Washed Out's breakthrough song and the first single
+        </p>
+      </md-card-content>
+      </md-card-content>
+    </md-card>
+
+  </div>
+
+</section>
+
+<div class="divider"></div>
