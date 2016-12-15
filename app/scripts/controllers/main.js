@@ -16,13 +16,29 @@ angular.module('sisepDevApp')
     $location, 
     $mdMedia, 
     config, 
-    loginSVC,
     $rootScope) {
-      $scope.toggleLeft = buildDelayedToggler('left');
-        $scope.toggleRight = buildToggler('right');
-        $scope.isOpenRight = function(){
-          return $mdSidenav('right').isOpen();
-        };
+    
+    
+    this.isNowTime = moment().locale('pt-br').format('LL');
+
+    this.toggleLeft = function () {
+      // Component lookup should always be available since we are not using `ng-if`
+      $mdSidenav('left').close()
+        .then(function () {
+          $log.debug("close LEFT is done");
+        });
+
+    };
+
+    this.sidebar_opened = $mdMedia('gt-sm');
+
+    this.checkIfOwnPage = function () {
+
+      return _.contains(["/auth/login"], $location.path());
+
+    };
+      
+        
 
     /**
      * Supplies a function that will continue to operate until the
@@ -83,7 +99,7 @@ angular.module('sisepDevApp')
 
       this.toggleLeft = buildToggler('left');
 
-      this.sidebar_opened = $mdMedia('gt-sm');
+      this.sidebar_opened = true;
 
       this.checkIfOwnPage = function () {
         return _.contains(["/auth/login"], $location.path());

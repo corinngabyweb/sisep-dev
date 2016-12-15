@@ -1,15 +1,15 @@
 <section class="page-padding row">
 
-  <div class="col-md-7" data-ng-controller="flotChartCtrl">
+  <div class="col-md-8" data-ng-controller="flotChartCtrl">
     <div class="md-whiteframe-z1">
       <div class="md-content__body">
         <div data-ng-controller="flotChartCtrl">
 
           <h3>
-            Dashboard
+            Página Inicial
           </h3>
           <p>
-            Welcome to angular administer dashboard main page <button ng-click="SidenavCtrl.toggleLeft()">Toggle left</button>
+            Petrópolis, {{main.isNowTime}}
           </p>
 
           <div class="choices">
@@ -38,16 +38,11 @@
           <div data-flot-chart
                data-data="line1.data"
                data-options="line1.options"
-               style="width: 100%; height: 300px;"
+               style="width: 100% ; height: 300px;"
                   ></div>
         </div>
 
-        <div class="md-content__menu--calendar">
-
-          <div data-ng-controller="CalendarCtrl">
-            <md-datepicker ng-model="myDate" md-placeholder="Enter date"></md-datepicker>
-          </div>
-        </div>
+        
 
       </div>
     </div>
@@ -82,7 +77,7 @@
               </div>
               <div flex="30" class="text-right">
                 <p>
-                  <md-icon class="color--white" md-svg-src="dist/img/icons/ic_trending_up_24px.svg"></md-icon>
+                 
                 </p>
               </div>
             </div>
@@ -94,7 +89,7 @@
               </div>
               <div flex="30" class="text-right">
                 <p>
-                  <md-icon class="color--white" md-svg-src="dist/img/icons/ic_trending_down_24px.svg"></md-icon>
+                  
                 </p>
               </div>
             </div>
@@ -117,7 +112,7 @@
               </div>
               <div flex="30" class="text-right">
                 <p>
-                  <md-icon class="color--white" md-svg-src="dist/img/icons/ic_trending_up_24px.svg"></md-icon>
+                  
                 </p>
               </div>
             </div>
@@ -152,68 +147,17 @@
 
     <div class="divider"></div>
 
-    <div class="md-whiteframe-z1">
-
-      <md-toolbar class="md-accent md-theme-default md-whiteframe-z1">
-        <div class="md-toolbar-tools">
-          <div class="map-image">
-            <img src="dist/images/team3.jpg" alt="">
-          </div>
-          <div class="map-name">
-            <h5>Philip Gragoline</h5>
-          </div>
-          <span flex></span>
-          <md-button class="md-icon-button" aria-label="More">
-            <md-icon md-svg-icon="dist/img/icons/ic_map_24px.svg"></md-icon>
-          </md-button>
-          <md-button class="md-icon-button" aria-label="More">
-            <md-icon md-svg-icon="dist/img/icons/ic_my_location_24px.svg"></md-icon>
-          </md-button>
-        </div>
-      </md-toolbar>
-      <md-content>
-        <div class="md-content__body">
-          <div data-ng-controller="jqvmapCtrl">
-            <div style="width: 100%; height: 300px;" class="ui-map" ui-jqvmap options="worldMap"></div>
-          </div>
-          <h3>
-            World Map
-          </h3>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
-          </p>
-        </div>
-      </md-content>
-    </div>
   </div>
 
-  <div class="col-md-3">
-    <div class="md-whiteframe-z1">
-      <div class="md-content__body">
-        <form layout="row" layout-wrap>
-          <textarea flex="100" class="form-control no-border" rows="3" placeholder="Write something..."></textarea>
-          <span flex="100"><br/></span>
-          <md-button aria-label="Button" class="md-primary md-raised">Send</md-button>
-          <span flex></span>
-          <md-button class="md-icon-button md-icon-button--small" aria-label="More">
-            <md-icon class="md-accent" md-svg-src="dist/img/icons/ic_camera_24px.svg"></md-icon>
-          </md-button>
-          <md-button class="md-icon-button md-icon-button--small" aria-label="More">
-            <md-icon class="md-accent" md-svg-src="dist/img/icons/ic_mic_24px.svg"></md-icon>
-          </md-button>
-        </form>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
+  <div class="col-md-4">
+   
     <div class="md-whiteframe-z1">
       <div class="md-content__body">
         <h4>
-          Activity stream
+          Log do sistema
         </h4>
         <p>
-          Latest activity
+          Últimas ações de usuários
         </p>
 
         <div class="timeline-body">
@@ -278,7 +222,7 @@
       <div layout="row">
         <md-toolbar class="md-toolbar-content md-primary">
           <h3>
-            <span>Latest friend activity</span>
+            <span>Liberações de crédito recentes</span>
           </h3>
           <div>
             <ul class="list-inline">
@@ -298,12 +242,6 @@
                 <img src="dist/images/team5.jpg" class="img30_30 img-rounded">
               </li>
             </ul>
-          </div>
-          <div data-ng-controller="sparklineCtrl">
-                      <span data-sparkline
-                            data-spark-data="simpleChartwhiteLong.sparkData"
-                            data-spark-options="simpleChartwhiteLong.sparkOptions"
-                              ></span>
           </div>
         </md-toolbar>
       </div>

@@ -2,7 +2,7 @@
  Application navigation controllers
  */
 
-angular.module("app.navigation", [])
+angular.module('sisepDevApp')
 .controller("MenuCtrl",['$location',
   function($location){
 

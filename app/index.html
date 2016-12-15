@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>SISEP Petrópolis</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -16,16 +16,16 @@
     <link rel="stylesheet" href="styles/styles.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="sisepDevApp" ng-controller="MainCtrl as master" class="navigation--small">
+  <body ng-app="sisepDevApp" ng-controller="MainCtrl as main" class="navigation--small">
 
   
 
-  <div data-ng-class="{'ownpage' : master.checkIfOwnPage(), 'slided-right' : master.sidebar_opened}"
+  <div data-ng-class="{'ownpage' : main.checkIfOwnPage(), 'slided-right' : main.sidebar_opened}"
        class="view-container" layout="column" flex>
-
+    
     
    <!-- Conteúdo da página -->
-    <section data-ui-view id="content" class="main-content" md-scroll-y>
+    <div data-ui-view id="content" class="main-content" md-scroll-y>
       
       <div class="loading-screen" ng-show='stateIsLoading'>
         <div class="loading-container">
@@ -34,28 +34,12 @@
         </div>
       </div>
 
-    </section>
+    </div>
   </div>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
-
-    <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.min.js"></script>
-    <![endif]-->
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -72,16 +56,27 @@
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/jquery.sparkline.build/dist/jquery.sparkline.js"></script>
+    <script src="bower_components/angular-ui-router.stateHelper/statehelper.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/jqvmap/dist/jquery.vmap.min.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/moment/locale/pt-br.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/app.route.js"></script>
-        <script src="scripts/config.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/navigation.js"></script>
+        <script src="scripts/controllers/autocomplete.js"></script>
+        <script src="scripts/controllers/calendar.js"></script>
+        <script src="scripts/controllers/charts.js"></script>
+        <script src="scripts/controllers/chips.js"></script>
         <script src="scripts/controllers/sidenav.js"></script>
+        <script src="scripts/config.js"></script>
         <!-- endbuild -->
 </body>
 </html>
