@@ -14,8 +14,9 @@
         <md-button class="md-button-toggle md-button" ng-click="section.url != null ? menusections.goToUrl(section.url) : menusections.toggle($index)" aria-controls="menus">
           <div class="ng-binding ng-scope">
             <md-icon ng-style="{color: md-accent}"
-              aria-label=""
-              class="fa fa-{{section.icon}} md-18"
+              style="font-size: 16px; margin-right: 3px"
+              md-font-icon="fa-{{section.icon}}"
+              class="fa"
               ng-class="{'md-primary':menusections.getActiveParent(section.menu_items),'md-accent':!menusections.getActiveParent(section.menu_items)}">
             </md-icon>
             <span class="menu-item__menu-name">{{section.name}}</span>
@@ -26,7 +27,7 @@
           </div>
         </md-button>
         <ul ng-if="section.menu_items" class="main-menu__submenu" ng-class="section.toggled ? 'open' : 'closed'">
-          <li data-ng-repeat="item in section.menu_items">
+          <li data-ng-repeat="item in section.menu_items" ui-sref-active="md-focused">
             <md-button ng-if="item.demo" aria-label="Button" class="btn-width-medium md-accent" ng-click="navigationController.isDemoFunction()">{{item.name}}</md-button>
             <md-button ng-if="!item.demo" ui-sref="{{item.url}}" aria-label="Button" class="btn-width-medium md-accent" >{{item.name}}</md-button>
           </li>

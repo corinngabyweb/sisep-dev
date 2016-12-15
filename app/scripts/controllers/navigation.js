@@ -20,27 +20,7 @@ angular.module('sisepDevApp')
 
       },
       {
-        name: 'Entidades Empegadoras',
-        is_toggle:true,
-        toggled: false,
-        icon: 'building',
-        menu_items: [
-          {
-            name: 'Ver Todos',
-            demo: true
-          },
-          {
-            name: 'Adicionar',
-            demo: true
-          },
-          {
-            name: 'Relatórios',
-            demo: true
-          }
-        ]
-      },
-      {
-        name: 'Servidores Associados',
+        name: 'Filiados',
         is_toggle:true,
         icon: 'user',
         menu_items: [
@@ -60,7 +40,28 @@ angular.module('sisepDevApp')
         ]
       },
       {
-        name: 'Empresas Conveniadas',
+        name: 'Entidades Empegadoras',
+        is_toggle:true,
+        toggled: false,
+        icon: 'building',
+        menu_items: [
+          {
+            name: 'Ver Todos',
+            demo: true
+          },
+          {
+            name: 'Adicionar',
+            demo: true
+          },
+          {
+            name: 'Relatórios',
+            demo: true
+          }
+        ]
+      },
+      
+      {
+        name: 'Conveniados',
         is_toggle:true,
         icon: 'group',
         menu_items: [
@@ -82,7 +83,7 @@ angular.module('sisepDevApp')
         name: 'Cargos',
         is_toggle:true,
         toggled: false,
-        icon: 'dist/img/icons/ic_transform_24px.svg',
+        icon: 'vcard-o',
         menu_items: [
           {
             name: 'Ver Todos',
@@ -95,13 +96,13 @@ angular.module('sisepDevApp')
         ]
       },
       {
-        name: 'Variáveis',
+        name: 'Painel de Controle',
         is_toggle:true,
         toggled: false,
-        icon: 'dist/img/icons/ic_transform_24px.svg',
+        icon: 'wrench',
         menu_items: [
           {
-            name: 'Ver Todos',
+            name: 'Permissões do Sistema',
             demo: true
           },
           {
