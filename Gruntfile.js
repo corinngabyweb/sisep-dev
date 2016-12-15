@@ -265,7 +265,6 @@ module.exports = function (grunt) {
         src: [
           '<%= yeoman.dist %>/scripts/{,*/}*.js',
           '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
           '<%= yeoman.dist %>/styles/fonts/*'
         ]
       }
@@ -398,9 +397,10 @@ module.exports = function (grunt) {
             'api/{{config,src,vendor}/**,index.php,.htaccess}',
             '*.{ico,png,txt}',
             '.htaccess',
+            'common/*',
             '*.html',
             'views/{,*/}*.html',
-            'images/{,*/}*.{webp}',
+            'images/*',
             'fonts/*'
           ]
         }, {
@@ -409,6 +409,13 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
         }, {
+          //for Fontawesome stylesheet files
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/fontawesome/css',
+          src: ['font-awesome.min.css'],
+          dest: 'dist/styles'
+        },{
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
