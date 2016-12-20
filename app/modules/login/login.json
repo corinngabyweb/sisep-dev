@@ -1,0 +1,16 @@
+{
+	{
+		"matricula": "02835-8",
+		"entidade": "P. M. P.",
+		"senha": "",
+		"nome": "CARLOS MAGNO DE ALEXANDRIA",
+		"role": "atend"
+	},
+	{
+		"matricula": "02005-7",
+		"entidade": "SISEP PETRÓPOLIS",
+		"senha": "12345",
+		"nome": "MARISA DA SILVA OLIVEIRA",
+		"role": "admin"
+	}
+}

@@ -223,7 +223,7 @@ angular
   .run(["$rootScope", "$location", "$mdColorPalette", 
     function ($rootScope, $location, $mdColorPalette) {
 
-      $rootScope.app_name = "SISEP";
+      $rootScope.app_name = "SISEP Petrópolis";
       
 
       $rootScope.getMaterialColor = function (base, shade) {
