@@ -397,7 +397,7 @@ module.exports = function (grunt) {
             'api/{{config,src,vendor}/**,index.php,.htaccess}',
             '*.{ico,png,txt}',
             '.htaccess',
-            'common/*',
+            'common/{,*/}*.html',
             '*.html',
             'views/{,*/}*.html',
             'images/*',
@@ -415,6 +415,12 @@ module.exports = function (grunt) {
           cwd: 'bower_components/fontawesome/css',
           src: ['font-awesome.min.css'],
           dest: 'dist/styles'
+        }, {
+          //for Fontawesome stylesheet files
+          expand: true,
+          dot: true,
+          cwd: 'bower_components/fontawesome/fonts',
+          dest: '<%= yeoman.dist %>/fonts'
         },{
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
@@ -444,7 +450,7 @@ module.exports = function (grunt) {
         'svgmin'
       ]
     },
-
+/*
     shell: {
       options: {
         stdout: true,
@@ -458,7 +464,7 @@ module.exports = function (grunt) {
         command: 'make --directory <%= yeoman.app %>/api update'
       }
     },
-
+*/
     // Test settings
     karma: {
       unit: {
@@ -508,7 +514,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'shell:phpUpdate',
+    //'shell:phpUpdate',
     'wiredep',
     'useminPrepare',
     //'concurrent:dist',
