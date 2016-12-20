@@ -25,7 +25,6 @@ angular.module('sisepDevApp')
         loginSVC.logar(user);
         console.log($rootScope.logado);
       };
-      console.log($rootScope.logado);
 
       this.deslogar = function() {
         loginSVC.logout();

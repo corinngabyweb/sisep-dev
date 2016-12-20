@@ -1,14 +1,28 @@
 angular.module('sisepDevApp')
-  .service('loginSVC', function($rootScope, $location, $http, $mdDialog){
+.service('loginSVC', function($rootScope, $location, $mdDialog){
     this.logar = function(user){
-      var usuario = $http.get('modules/login/login.json').success(function(response) {
-          return response.data;
-      });
+      var usuario = [
+        {
+          matricula: "02835-8",
+          entidade: "20201010",
+          senha: "",
+          nome: "CARLOS MAGNO DE ALEXANDRIA",
+          role: "atend"
+        },
+        {
+          matricula: "02005-7",
+          entidade: "20701010",
+          senha: "12345",
+          nome: "MARISA DA SILVA OLIVEIRA",
+          role: "admin"
+        }
+      ];
       var usu = "";
       angular.forEach(usuario,  function(value,index){
         if(value.matricula == user.matricula && value.entidade == user.entidade)
         {
-          $rootScope.logado = value.nome;
+          
+          $rootScope.logado = value;
           if (value.role == "admin")
             $location.path('/inicio');
           else {
@@ -30,6 +44,7 @@ angular.module('sisepDevApp')
 
       if (usu == ""){
           console.log("Deu ruim");
+          console.log(usuario);
           $mdDialog.show(
             $mdDialog.alert()
             .clickOutsideToClose(true)
