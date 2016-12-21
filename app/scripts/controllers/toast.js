@@ -28,7 +28,7 @@ angular.module("app.toast",['ngMaterial', 'ngMessages'])
     $scope.showCustomToast = function () {
       $mdToast.show({
         controller: 'ToastCtrl',
-        templateUrl: 'app/views/templates/toast-template.html',
+        templateUrl: 'views/templates/toast-template.html',
         parent: $document[0].querySelector('#toastBounds'),
         hideDelay: 6000,
         position: $scope.getToastPosition()

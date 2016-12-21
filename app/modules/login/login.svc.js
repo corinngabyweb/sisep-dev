@@ -1,5 +1,6 @@
 angular.module('sisepDevApp')
-.service('loginSVC', function($rootScope, $location, $mdDialog){
+.service('loginSVC', function($rootScope, $location, $mdDialog, $mdToast){
+
     this.logar = function(user){
       var usuario = [
         {
@@ -22,7 +23,6 @@ angular.module('sisepDevApp')
         if(value.matricula == user.matricula && value.entidade == user.entidade)
         {
           
-          $rootScope.logado = value;
           if (value.role == "admin")
             $location.path('/inicio');
           else {
@@ -36,22 +36,21 @@ angular.module('sisepDevApp')
             );
           }
           
-          usu = value;
+          $rootScope.logado = usu = usuario[index];
         }
         
 
       });
 
       if (usu == ""){
-          console.log("Deu ruim");
-          console.log(usuario);
-          $mdDialog.show(
-            $mdDialog.alert()
-            .clickOutsideToClose(true)
-            .title('Erro')
-            .textContent('Usuário e/ou senha inválido(s)')
-            .ariaLabel('Erro de autenticação')
-            .ok('Ok')
+          $mdToast.show(
+            $mdToast.simple()
+              .textContent('Usuário e/ou senha inválido')
+              .action('OK')
+              .highlightAction(true)
+              .highlightClass('md-accent')
+              .position('top right')
+              .hideDelay(5000)
           );
         }
     }

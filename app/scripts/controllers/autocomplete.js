@@ -54,13 +54,23 @@
      * Build `states` list of key/value pairs
      */
     function loadAll() {
-      var entidades = 'CÂMARA MUNICIPAL, COMDEP, CPTRANS, FUNDAÇÃO DE CULTURA, FUNDAÇÃO DE SAÚDE, INPAS - FUNCIONÁRIO, P.M.P.,\
-              P.M.P. - EDUCAÇÃO, P.M.P. - INATIVO, SISEP PETRÓPOLIS';
+      var filiados = [
+        {
+          nome: "MARINA AZEVEDO DE BRITO",
+          matricula: "02805-3",
+          saldo: 1590
+        },
+        {
+          nome: "VANESSA GONÇALVES DA SILVA",
+          matricula: "60607-9",
+          saldo: 3578.90
+        }
+      ];
 
-      return entidades.split(/, +/g).map( function (state) {
+      return filiados.map( function (state) {
         return {
-          value: state.toLowerCase(),
-          display: state
+          value: state.matricula,
+          display: state.nome
         };
       });
     }
@@ -69,7 +79,7 @@
      * Create filter function for a query string
      */
     function createFilterFor(query) {
-      var lowercaseQuery = angular.lowercase(query);
+      //var lowercaseQuery = angular.lowercase(query);
 
       return function filterFn(state) {
         return (state.value.indexOf(lowercaseQuery) === 0);
