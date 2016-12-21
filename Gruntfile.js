@@ -508,10 +508,10 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'shell:phpUpdate',
+    //'shell:phpUpdate',
     'wiredep',
     'useminPrepare',
-    //'concurrent:dist',
+    'concurrent:dist',
     'autoprefixer',
     'concat',
     'ngmin',
