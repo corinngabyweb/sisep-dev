@@ -22,13 +22,13 @@
 
               <div flex>
                 <md-switch ng-model="new_visitors" ng-change="switchClick(0)" name="0" class="md-primary" aria-label="New visitors">
-                  New visitors
+                  Ano atual
                 </md-switch>
               </div>
 
               <div flex>
                 <md-switch ng-model="returning_visitors" ng-change="switchClick(1)" name="1" class="md-accent" aria-label="Returning visitors">
-                  Returning visitors
+                  Ano Anterior
                 </md-switch>
               </div>
 
@@ -50,57 +50,61 @@
     <div class="divider"></div>
 
     <div class="md-whiteframe-z1">
-      <div layout-gt-md="row">
-        <md-toolbar flex="100" flex-gt-md="50" class="md-toolbar-content md-accent">
-          <h3>
-            <span>Popular data</span>
+      <md-toolbar flex="100" class="md-toolbar-content md-accent">
+     
+        <h3>
+            <span>Limite de Crédito</span>
           </h3>
           <p class="text--small">
-            Important notices you might want to know
+            Verificar limite de crédito disponível para filiado
           </p>
-          <br/>
-          <div data-ng-controller="chartingCtrl">
-            <div data-ng-controller="sparklineCtrl">
-                      <span data-sparkline
-                            data-spark-data="simpleChartNoFill.sparkData"
-                            data-spark-options="simpleChartNoFill.sparkOptions"
-                              ></span>
-            </div>
-          </div>
-          <br/>
           <div class="box-updates">
-            <div class="box-updates__item--no-border" layout="row">
-              <div flex="70">
-                <p>
-                  #Trendingstory
-                </p>
+            
+            <div class="box-updates__item--no-border" 
+                 ng-controller="autocompleteCtrl as ac" 
+                 layout="row">
+              <div flex="100">
+                  <form ng-submit="$event.preventDefault()">
+                    <md-autocomplete flex
+            md-input-name="autocompleteField"
+            md-input-minlength="2"
+            md-input-maxlength="18"
+            md-no-cache="ac.noCache"
+            md-selected-item="ac.selectedItem"
+            md-search-text="ac.searchText"
+            md-items="item in ac.querySearch(ac.searchText)"
+            md-item-text="item.display"
+            md-floating-label="Nome ou matrícula do filiado">
+          <md-item-template>
+            <span md-highlight-text="ac.searchText">{{item.display}} || {{item.value}}</span>
+          </md-item-template>
+          <div ng-messages="searchForm.autocompleteField.$error" ng-if="searchForm.autocompleteField.$touched">
+            <div ng-message="required">You <b>must</b> have a favorite state.</div>
+            <div ng-message="md-require-match">Please select an existing state.</div>
+            <div ng-message="minlength">Your entry is not long enough.</div>
+            <div ng-message="maxlength">Your entry is too long.</div>
+          </div>
+        </md-autocomplete>
+                    <br/>
+                  </form>
               </div>
-              <div flex="30" class="text-right">
-                <p>
-                 
-                </p>
-              </div>
-            </div>
-            <div class="box-updates__item--no-border" layout="row">
-              <div flex="70">
-                <p>
-                  #downtotheriver
-                </p>
-              </div>
-              <div flex="30" class="text-right">
-                <p>
-                  
-                </p>
-              </div>
+              
             </div>
           </div>
-        </md-toolbar>
-        <md-toolbar flex="100" flex-gt-md="50" class="md-toolbar-content md-primary">
+      </md-toolbar>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="md-whiteframe-z1">
+      <div layout-gt-md="row">
+        
+        <md-toolbar flex="100" class="md-toolbar-content md-primary">
           <h3>
-            <span>Latest social trends</span>
+            <span>Liberação de crédito</span>
           </h3>
           <p class="text--small">
-            Important social media updates
+            Liberar crédito adicional para filiado
           </p>
           <br/>
           <div class="box-updates">

@@ -16,7 +16,7 @@ angular
     function ($routeProvider, $stateProvider, $urlRouterProvider) {
         var routeTasksConfig = {
         controller: 'TodoCtrl',
-        templateUrl: "app/components/tasks/tasks.html",
+        templateUrl: "components/tasks/tasks.html",
         resolve: {
           store: function (todoStorage) {
             // Get the correct module (API or localStorage).
@@ -34,10 +34,11 @@ angular
             //url: '/',
             views: {
               '@' : {
-                templateUrl: 'app/common/layout/logged.html'
+                templateUrl: 'common/layout/logged.html'
               },
-              'left@index' : { templateUrl: 'app/common/navigation/navigation.html',},
-              'main@index' : { templateUrl: 'app/common/layout/main-data.html',},
+              'top@index' : { templateUrl: 'common/layout/header.html',},
+              'left@index' : { templateUrl: 'common/navigation/navigation.html',},
+              'main@index' : { templateUrl: 'common/layout/main-data.html',},
             },
           })
         .state('inicio', {
@@ -45,7 +46,7 @@ angular
             parent: 'index',
             views: {
               'detail@index' : {
-                templateUrl: 'app/views/dashboards/dashboard.html'
+                templateUrl: 'views/dashboards/dashboard.html'
               }
             }   
           })        
@@ -55,7 +56,7 @@ angular
             parent: 'index',
             views: {
               'detail@index' : {
-                templateUrl: 'app/views/associado/listar.html'
+                templateUrl: 'views/associado/listar.html'
               }
             }   
           })
@@ -64,7 +65,7 @@ angular
             parent: 'index',
             views: {
               'detail@index' : {
-                templateUrl: 'app/views/associado/cadastrar.html'
+                templateUrl: 'views/associado/cadastrar.html'
               }
             }   
           })
@@ -75,7 +76,7 @@ angular
             url: '/auth',
             views: {
               '@' : {
-                templateUrl: 'app/common/layout/auth.html'
+                templateUrl: 'common/layout/auth.html'
               }
             },
           })
@@ -85,6 +86,15 @@ angular
             views: {
               'full@auth' : {
                 templateUrl: 'modules/login/login.html'
+              }
+            }   
+        })
+        .state('locked', {
+            parent: 'auth',
+            url: '/locked',
+            views: {
+              'full@auth' : {
+                templateUrl: 'modules/login/locked.html'
               }
             }   
         })
