@@ -1,4 +1,4 @@
-angular.module('app.tabs', ['ngMaterial', 'ngMessages'])
+angular.module('sisepDevApp')
   .controller('TabsDemoCtrl',
   function ($scope, $log) {
     var tabs = [

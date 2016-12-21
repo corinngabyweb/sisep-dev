@@ -9,7 +9,7 @@
       </section>
     </div>
 
-    <div class="signin-form md-whiteframe-z1">
+    <div ng-controller="LoginCtrl as login" class="signin-form md-whiteframe-z1">
 
       <md-toolbar class="md-accent md-theme-default">
         <div class="md-toolbar-tools">
@@ -24,15 +24,20 @@
         <div class="md-content__body extra-padding">
           <div layout="column" class="loginBox layout-column">
               <md-input-container class="">
-                <label for="input_0">Usuário</label>
-                <input type="text" ng-model="user.username" class="ng-pristine ng-untouched ng-valid md-input ng-valid-email" tabindex="0" id="input_0" ><div class="md-errors-spacer"></div>
+                <label for="input_0">Matrícula</label>
+                <input type="text" ng-model="user.matricula" class="ng-pristine ng-untouched ng-valid md-input ng-valid-email" tabindex="0" id="matricula_login" ><div class="md-errors-spacer"></div>
               </md-input-container>
-              <md-input-container class="">
-                <label for="input_1">Senha</label>
-                <input type="password" ng-model="user.senha" class="ng-pristine ng-untouched ng-valid md-input" tabindex="0" id="input_1"><div class="md-errors-spacer"></div>
+              <md-input-container ng-controller="SelectCtrl">
+                  <label>Entidade Empregadora</label>
+                  <md-select ng-model="user.entidade">
+                    <md-option><em>Selecione seu Empregador</em></md-option>
+                    <md-option ng-repeat="entidade in entidades" ng-value="entidade.opt">
+                      {{entidade.val}}
+                    </md-option>
+                  </md-select>  
               </md-input-container>
               <div layout="row" layout-align="center center" style="padding-top:20px;" class="layout-align-center-center layout-row">
-                <button class="md-raised md-primary md-button md-ink-ripple" type="button" ng-click="navigationController.logar(user)">
+                <button class="md-raised md-primary md-button md-ink-ripple" type="button" ng-click="login.logar(user)">
                 Login
                 </button>
                 

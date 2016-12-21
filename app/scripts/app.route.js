@@ -84,7 +84,7 @@ angular
             url: '/login',
             views: {
               'full@auth' : {
-                templateUrl: 'app/views/pages/signin.html'
+                templateUrl: 'modules/login/login.html'
               }
             }   
         })
