@@ -1,10 +1,13 @@
-<div class="page-signin">
+<div class="page-signin"  ng-controller="LoginCtrl as login">
 
   <div class="signin-header">
     <section class="logo">
       <a href="#/">
         <md-button class="md-icon-button md-icon-button--small" aria-label="More">
-          <md-icon class="md-primary" md-svg-src="dist/img/icons/ic_lock_48px.svg"></md-icon>
+          <md-icon
+              md-font-icon="fa-key"
+              class="fa fa-2x md-theme-default">
+            </md-icon>
         </md-button>
       </a>
     </section>
@@ -14,28 +17,64 @@
 
     <md-toolbar class="md-accent md-theme-default">
       <div class="md-toolbar-tools">
-        <h3>Esqueci minha senha</h3>
+        <h3>Primeiro Acesso - Cadastre sua senha</h3>
         <span class="flex"></span>
         <button class="md-icon-button md-button" aria-label="View Source">
-          <md-icon md-svg-icon="dist/img/icons/ic_lock_outline_24px.svg"></md-icon>
+          <md-icon
+              style="color: #fff"
+              md-font-icon="fa-key"
+              class="fa fa-2x md-theme-default">
+            </md-icon>
         </button>
       </div>
     </md-toolbar>
     <md-content>
       <div class="md-content__body extra-padding">
 
-        <form class="form-horizontal">
-          <div class="form-group">
-            <md-input-container class="md-accent" md-no-float>
-              <md-icon md-svg-src="dist/img/icons/ic_mail_24px.svg"></md-icon>
-              <input ng-model="user.phone" type="text" placeholder="Digite seu e-mail">
-            </md-input-container>
+        <form class="form-horizontal" ng-submit="">
+          <h3><strong style="text-align: center;color: rgb(57,73,171)">{{login.getUser.nome}}</strong></h3><br /><br />
+          <div layout layout-sm="column">
+            <div flex="30">
+              <img src="images/{{login.getUser.foto}}.jpg" class="md-avatar" />
+            </div>
+
+            <div flex="70">
+            <div layout="column">
+              <form name="cadastraSenha">
+                <md-input-container>
+                  <label>Cadastre uma senha</label>
+                  <input type="text"
+                         class="form-control"
+                         required
+                         name="novaSenha"
+                         data-ng-trim='false'
+                         data-ng-model="user.novaSenha">
+                </md-input-container>
+                <md-input-container>
+                    <label>Confirme sua senha</label>
+                    <input type="text"
+                     class="form-control"
+                     required
+                     name="confSenha"
+                     data-ng-trim='false'
+                     data-ng-model="user.confSenha"
+                     data-password-verify="user.novaSenha"
+                      >
+                    <div class="md-errors-spacer"></div>
+                   <div ng-messages="cadastraSenha.confSenha.$error">
+                    <div ng-message="dataPasswordVerify">As senhas não conferem!</div>
+                  </div>          
+                </md-input-container>
+              </form>
+              <p style="font-size: 12px">Se você não é {{login.getUser.nome}}, <a href="#" md-colors="{color: 'red-500'}" style="cursor: pointer;" ng-click="login.deslogar()">clique aqui</a></p>
+                
+              </div>
+            </div> 
           </div>
           <div class="form-group">
             <md-button class="btn-width-large btn-block btn-lg md-primary md-raised">Enviar</md-button>
           </div>
         </form>
-
       </div>
     </md-content>
   </div>
