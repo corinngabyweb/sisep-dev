@@ -39,24 +39,8 @@ angular.module('sisepDevApp')
 
     
 
-    login.logar = function(user){
-   /*   
-      login.usu = "";
-      login.hasPass = false
+    login.logMeIn = function(user){
       
-
-      if (login.usu == ""){
-          $mdToast.show(
-            $mdToast.simple()
-              .textContent('Matrícula inexistente para este Empregador')
-              .action('OK')
-              .highlightAction(true)
-              .highlightClass('md-accent')
-              .position('top right')
-              .hideDelay(5000)
-          );
-        }
-        */
     }
 
     login.logout = function(){
