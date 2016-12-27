@@ -87,5 +87,5 @@ angular
         })
     $urlRouterProvider.otherwise('/auth/login');
       
-    }
+    } 
   ]);

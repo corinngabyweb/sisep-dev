@@ -25,7 +25,7 @@ angular.module('sisepDevApp')
       ];
 
       login.usu = "";
-      angular.forEach(usuario,  function(value,index){
+      angular.forEach(usuario, function(value,index){
         if(value.matricula == user.matricula && value.entidade == user.entidade)
         {
           login.usu = usuario[index];
@@ -37,11 +37,11 @@ angular.module('sisepDevApp')
         return false;
     };
 
-    
+
 
     login.logMeIn = function(user){
       
-    }
+    };
 
     login.logout = function(){
         $rootScope.logado = null;

@@ -61,14 +61,6 @@ angular.module('sisepDevApp')
 
         return usr;
       };
-
-        
-
-      
-
-
-
-      
      
 
       this.deslogar = function() {
