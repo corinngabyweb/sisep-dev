@@ -30,14 +30,9 @@ angular.module('sisepDevApp')
 
     };
 
-    this.sidebar_opened = $mdMedia('gt-sm');
+    this.sidebar_opened = $mdMedia('gt-sm') && config.sidebar_default_open;
 
-    this.checkIfOwnPage = function () {
-
-      return _.contains(["/auth/login"], $location.path());
-
-    };
-      
+          
         
 
     /**
@@ -92,7 +87,7 @@ angular.module('sisepDevApp')
       this.sidebar_opened = true;
 
       this.checkIfOwnPage = function () {
-        return _.contains(["/auth/login"], $location.path());
+        return _.contains(["/auth/login", "/auth/primeiro_acesso"], $location.path());
       };
 
 

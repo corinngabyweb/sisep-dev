@@ -14,20 +14,7 @@ angular
   ])
   .config(["$routeProvider", "$stateProvider", "$urlRouterProvider",
     function ($routeProvider, $stateProvider, $urlRouterProvider) {
-        var routeTasksConfig = {
-        controller: 'TodoCtrl',
-        templateUrl: "components/tasks/tasks.html",
-        resolve: {
-          store: function (todoStorage) {
-            // Get the correct module (API or localStorage).
-            return todoStorage.then(function (module) {
-              module.get(); // Fetch the todo records in the background.
-              return module;
-            });
-          }
-        }
-      };
-
+      
       $stateProvider
         .state('index', {
             abstract: true,
@@ -89,16 +76,16 @@ angular
               }
             }   
         })
-        .state('locked', {
+        .state('primeiro_acesso', {
             parent: 'auth',
-            url: '/locked',
+            url: '/primeiro_acesso',
             views: {
               'full@auth' : {
                 templateUrl: 'modules/login/locked.html'
               }
             }   
         })
-    $urlRouterProvider.otherwise('/inicio');
+    $urlRouterProvider.otherwise('/auth/login');
       
-    }
+    } 
   ]);
