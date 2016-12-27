@@ -87,7 +87,7 @@ angular.module('sisepDevApp')
       this.sidebar_opened = true;
 
       this.checkIfOwnPage = function () {
-        return _.contains(["/auth/login", "/auth/locked"], $location.path());
+        return _.contains(["/auth/login", "/auth/primeiro_acesso"], $location.path());
       };
 
 

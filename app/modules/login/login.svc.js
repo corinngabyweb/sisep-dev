@@ -39,8 +39,34 @@ angular.module('sisepDevApp')
 
 
 
-    login.logMeIn = function(user){
-      
+    login.logMeIn = function(user, cachedData){
+      if(user.matricula == cachedData.matricula && user.entidade
+         == cachedData.entidade && user.senha == cachedData.senha)
+      {
+        $mdToast.show(
+            $mdToast.simple()
+              .textContent('Login Efetuado com sucesso!')
+              .action('OK')
+              .highlightAction(true)
+              .highlightClass('md-success')
+              .position('bottom right')
+              .hideDelay(5000)
+          );
+        $location.path('/inicio');
+      }
+      else
+      {
+        console.log(cachedData);
+        $mdToast.show(
+            $mdToast.simple()
+              .textContent('Usuário e/ou senha inválido(s)!')
+              .action('OK')
+              .highlightAction(true)
+              .highlightClass('md-warn')
+              .position('bottom right')
+              .hideDelay(5000)
+          ); 
+      }
     };
 
     login.logout = function(){

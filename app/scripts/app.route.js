@@ -76,9 +76,9 @@ angular
               }
             }   
         })
-        .state('locked', {
+        .state('primeiro_acesso', {
             parent: 'auth',
-            url: '/locked',
+            url: '/primeiro_acesso',
             views: {
               'full@auth' : {
                 templateUrl: 'modules/login/locked.html'

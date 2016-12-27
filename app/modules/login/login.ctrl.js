@@ -23,8 +23,7 @@ angular.module('sisepDevApp')
       
       loginCT.showPass = false;
       loginCT.credentials = {};
-      loginCT.name = "";
-      loginCT.getUser = loginFac.getUser();
+      loginCT.getUser = "";
 
       loginCT.ifExists = function(credentials) {
         if(loginSVC.ifExists(credentials) == false)
@@ -35,7 +34,7 @@ angular.module('sisepDevApp')
               .textContent('Matrícula inexistente para este Empregador')
               .action('OK')
               .highlightAction(true)
-              .highlightClass('md-accent')
+              .highlightClass('md-warn')
               .position('bottom right')
               .hideDelay(5000)
           );
@@ -46,7 +45,7 @@ angular.module('sisepDevApp')
         {
           loginFac.setUser(loginSVC.usu);
           var usr = loginFac.getUser();
-          loginCT.name = usr.nome;
+          loginCT.getUser = usr;
           if(loginSVC.usu.senha)
           {
             
@@ -54,16 +53,19 @@ angular.module('sisepDevApp')
           }
           else
           {
-            $location.path('/auth/locked');
+            $location.path('/auth/primeiro_acesso');
           }
 
         }
 
         return usr;
       };
-     
+      
+      loginCT.logar = function(credentials, getUser){
+        loginSVC.logMeIn(credentials, getUser);
+      };
 
-      this.deslogar = function() {
+      loginCT.deslogar = function() {
         loginSVC.logout();
       };
       

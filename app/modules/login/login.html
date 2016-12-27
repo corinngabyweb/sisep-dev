@@ -17,7 +17,8 @@
 
       <md-toolbar class="md-accent md-theme-default">
         <div class="md-toolbar-tools">
-          <h3>Entre com seus dados<span ng-if="login.showPass">, {{login.name}}</span></h3>
+          <h3>Entre com seus dados<span ng-if="login.showPass">, {{login.getUser.nome}}</span></h3>
+          {{login.getUser.matricula}}
           <span class="flex"></span>
           <button class="md-icon-button md-button " aria-label="View Source">
             <md-icon
@@ -29,7 +30,7 @@
         </div>
       </md-toolbar>
       <md-content>
-        <form ng-submit="login.logMeIn(credentials, login.getUser)">
+        <form ng-submit="login.logar(credentials, login.getUser)">
           <div class="md-content__body extra-padding">
             <div layout="column" class="loginBox layout-column">
                 
