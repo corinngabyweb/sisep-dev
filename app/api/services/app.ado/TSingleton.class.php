@@ -1,5 +1,4 @@
-﻿<?php
-
+<?php
 /* ini_set('display_errors',1);
 ini_set('display_startup_erros',1);
 error_reporting(E_ALL); */
@@ -10,7 +9,7 @@ Class Connection
 
 	var $hostname        = "127.0.0.1";
 	var $username        = "root";
-	var $passwd          = 't730shgt';
+	var $passwd          = '';
 	//var $database_name   = "sisep";
 	var $database_name   = "sisep_oficial";
 	

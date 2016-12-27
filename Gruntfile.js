@@ -200,20 +200,7 @@ module.exports = function (grunt) {
       server: '.tmp'
     },
 
-    // Add vendor prefixed styles
-    autoprefixer: {
-      options: {
-        browsers: ['last 1 version']
-      },
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '.tmp/styles/',
-          src: '{,*/}*.css',
-          dest: '.tmp/styles/'
-        }]
-      }
-    },
+    
 
     // Automatically inject Bower components into the app
     wiredep: {
@@ -235,14 +222,15 @@ module.exports = function (grunt) {
       options: {
         sassDir: '<%= yeoman.app %>/styles',
         cssDir: '.tmp/styles',
+        outputStyle: 'compress',
         generatedImagesDir: '.tmp/images/generated',
         imagesDir: '<%= yeoman.app %>/images',
         javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
+        fontsDir: '<%= yeoman.app %>/fonts',
         importPath: './bower_components',
         httpImagesPath: '/images',
         httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
+        httpFontsPath: '/fonts',
         relativeAssets: false,
         assetCacheBuster: false,
         raw: 'Sass::Script::Number.precision = 10\n'
@@ -259,16 +247,7 @@ module.exports = function (grunt) {
       }
     },
 
-    // Renames files for browser caching purposes
-    filerev: {
-      dist: {
-        src: [
-          '<%= yeoman.dist %>/scripts/{,*/}*.js',
-          '<%= yeoman.dist %>/styles/{,*/}*.css',
-          '<%= yeoman.dist %>/styles/fonts/*'
-        ]
-      }
-    },
+    
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -358,7 +337,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: ['*.html', 'views/{,*/}*.html'],
+          src: ['*.html', 'views/{,*/}*.html','modules/{,*/}*.html'],
           dest: '<%= yeoman.dist %>'
         }]
       }
@@ -397,30 +376,31 @@ module.exports = function (grunt) {
             'api/{{config,src,vendor}/**,index.php,.htaccess}',
             '*.{ico,png,txt}',
             '.htaccess',
-            'common/{,*/}*.html',
+            'common/{,*/}*.*',
             '*.html',
             'views/{,*/}*.html',
-            'images/*',
-            'fonts/*'
+            'images/{,*/}*.*',
+            'fonts/*',
+            'modules/{,*/}*.*'
           ]
         }, {
           expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
+        },{
+          expand: true,
+          cwd: 'bower_components/font-awesome',
+          src: 'fonts/*',
+          dest: '<%= yeoman.dist %>'
+          
         }, {
           //for Fontawesome stylesheet files
           expand: true,
           dot: true,
-          cwd: 'bower_components/fontawesome/css',
+          cwd: 'bower_components/font-awesome/css',
           src: ['font-awesome.min.css'],
           dest: 'dist/styles'
-        }, {
-          //for Fontawesome stylesheet files
-          expand: true,
-          dot: true,
-          cwd: 'bower_components/fontawesome/fonts',
-          dest: '<%= yeoman.dist %>/fonts'
         },{
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
@@ -445,12 +425,12 @@ module.exports = function (grunt) {
         'compass'
       ],
       dist: [
-        'compass:dist',
+        'compass',
         'imagemin',
         'svgmin'
       ]
     },
-/*
+
     shell: {
       options: {
         stdout: true,
@@ -464,7 +444,7 @@ module.exports = function (grunt) {
         command: 'make --directory <%= yeoman.app %>/api update'
       }
     },
-*/
+
     // Test settings
     karma: {
       unit: {
@@ -490,7 +470,6 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
-      'autoprefixer',
       //'configureProxies',
       //'php:server',
       'connect:livereload',
@@ -507,7 +486,6 @@ module.exports = function (grunt) {
     'clean:server',
     'shell:phpTest',
     'concurrent:test',
-    'autoprefixer',
     'connect:test',
     'karma'
   ]);
@@ -517,15 +495,15 @@ module.exports = function (grunt) {
     //'shell:phpUpdate',
     'wiredep',
     'useminPrepare',
-    'concurrent:dist',
-    'autoprefixer',
+    //'concurrent:dist',
     'concat',
     'ngmin',
-    'copy:dist',
+    'compass',
+    'copy',
     'cdnify',
     'cssmin',
+
     'uglify',
-    'filerev',
     'usemin',
     'htmlmin'
   ]);
