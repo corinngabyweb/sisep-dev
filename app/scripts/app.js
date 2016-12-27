@@ -16,7 +16,6 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngMaterial',
-    'ngPassword',
     'ui.router',
     'ui.utils.masks'
   ]);
