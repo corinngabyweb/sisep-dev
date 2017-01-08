@@ -23,7 +23,7 @@ if ($getQueryIdFiliado["num_rows"] > 0) {
     $_SESSION["entidade"] = $getQueryIdFiliado[0]["fk_id_entidade_empregadora"];
     $_SESSION["senha"] = $getQueryIdFiliado[0]["senha_filiado"];
 } else {
-    $_SESSION["retorno"]["dados"] = "null";
+    $_SESSION["retorno"]["dados"] = null;
     $_SESSION["retorno"]["login"] = "false";
     $_SESSION["retorno"]["status"] = "erro";
     

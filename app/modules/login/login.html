@@ -17,7 +17,7 @@
 
       <md-toolbar class="md-accent md-theme-default">
         <div class="md-toolbar-tools">
-          <h3>Entre com seus dados<span ng-if="login.showPass">, {{login.getUser.nome}}</span></h3>
+          <h3>Entre com seus dados<span ng-if="login.showPass">, {{login.filiadoNome}}</h3>
           
           <span class="flex"></span>
           <button class="md-icon-button md-button " aria-label="View Source">
@@ -61,8 +61,7 @@
                 <div layout="row"  ng-if="login.showPass" layout-align="center center" style="padding-top:20px;" class="layout-align-center-center layout-row">
                   <button class="md-raised md-primary md-button md-ink-ripple" type="sumbit" >
                   Entrar
-                  </button>
-                  
+                  </button>                  
                 </div>
               
             </div>
@@ -70,6 +69,4 @@
         </form>
       </md-content>
     </div>
-
-
 </div>

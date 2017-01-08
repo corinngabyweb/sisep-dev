@@ -35,3 +35,16 @@
 .ng-camera-feed {
 	margin: 0 auto;
 }
+
+.avatar-container {
+	display: block;
+	width: 100%;
+	height: 128px;
+	overflow: hidden;
+	margin-right: 15px;
+
+	img {
+		position: absolute;
+		width:128px;
+	}
+}

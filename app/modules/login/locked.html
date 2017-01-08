@@ -32,13 +32,17 @@
       <div class="md-content__body extra-padding">
 
         <form class="form-horizontal" ng-submit="">
-          <h3><strong style="text-align: center;color: rgb(57,73,171)">{{login.getUser.nome}}</strong></h3><br /><br />
+          <h3><strong style="text-align: center;color: rgb(57,73,171)">{{User.nome_filiado}}</strong></h3><br /><br />
           <div layout layout-sm="column">
-            <div flex="30">
-              <img src="images/{{login.getUser.foto}}.jpg" class="md-avatar" />
+            <div flex="30" flex-sm="100">
+              
+              <img src="images/user-128.png" alt="{{User.nome_filiado}} ainda não possui foto" ng-if="!User.foto_filiado" class="md-avatar" />
+              <div class="avatar-container" alt="Foto de {{User.nome_filiado}}" ng-if="User.foto_filiado" >
+                <img src="{{User.foto_filiado}}" class="md-avatar" />
+              </div>
             </div>
 
-            <div flex="70">
+            <div flex="70" flex-sm="100">
             <div layout="column">
               <form name="cadastraSenha">
                 <md-input-container>
@@ -66,7 +70,7 @@
                   </div>          
                 </md-input-container>
               </form>
-              <p style="font-size: 12px">Se você não é {{login.getUser.nome}}, <a href="#" md-colors="{color: 'red-500'}" style="cursor: pointer;" ng-click="login.deslogar()">clique aqui</a></p>
+              <p style="font-size: 12px">Se você não é {{User.nome_filiado}}, <a href="#" md-colors="{color: 'red-500'}" style="cursor: pointer;" ng-click="login.getLogado()">clique aqui</a></p>
                 
               </div>
             </div> 

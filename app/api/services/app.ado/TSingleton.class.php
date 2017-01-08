@@ -9,7 +9,7 @@ Class Connection
 
 	var $hostname        = "127.0.0.1";
 	var $username        = "root";
-	var $passwd          = '';
+	var $passwd          = 't730shgt';
 	//var $database_name   = "sisep";
 	var $database_name   = "sisep_oficial";
 	

@@ -15,6 +15,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
+    'angular-storage',
     'ngMaterial',
     'ui.router',
     'ui.utils.masks'

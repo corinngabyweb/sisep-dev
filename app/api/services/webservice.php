@@ -3,6 +3,7 @@
 //Este script trata-se do webservice responsável por chamar outros scripts de funções específicas
 //para cada seção da área do cliente com a possibilidade de retorno de valores em JSON para as
 //requisições recebidas
+
 include_once("app.ado/TSingleton.class.php");
 include_once("app.ado/TSqlDao.class.php");
 include_once("getSet/setFunctions.php");
@@ -45,7 +46,10 @@ if (isset($arrPost["action"])) {
 //Alteramos o cabeçalho para não gerar cache do resultado
 //Alteramos o cabeçalho para que o retorno seja do tipo JSON
 //Convertemos o array em um objecto json
-//header('Cache-Control: no-cache, must-revalidate');
-//header('Content-Type: application/json; charset=utf-8');
+header('Cache-Control: no-cache, must-revalidate');
+header('Content-Type: application/json; charset=utf-8');
+header("Access-Control-Allow-Origin: *");
+
 //print_r($_SESSION);
+
 echo json_encode($_SESSION["retorno"]);
