@@ -7,8 +7,8 @@
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
 
-module.exports = function (grunt) { //f
- 
+module.exports = function (grunt) {
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -468,7 +468,7 @@ module.exports = function (grunt) { //f
 
     grunt.task.run([
       'clean:server',
-      'wiredep',
+      //'wiredep',
       'concurrent:server',
       //'configureProxies',
       //'php:server',
