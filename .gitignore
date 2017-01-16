@@ -6,3 +6,4 @@ bower_components
 nbproject
 app/images/banco_de_imagens
 app/modules/login/login.svc.js
+app/api/services/app.ado/TSingleton.class.php
