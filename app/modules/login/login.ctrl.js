@@ -8,7 +8,7 @@
  * Controller of the sisepDevApp
  */
 angular.module('sisepDevApp').controller('LoginCtrl', LoginCtrl);
-  
+  //mudei e funfou
 function LoginCtrl($scope, $http, $timeout, $mdSidenav, $log,
   $location, config, $rootScope, $mdToast, loginSVC, loginFac) {
       var loginCT = this;

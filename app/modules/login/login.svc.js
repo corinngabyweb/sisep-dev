@@ -3,7 +3,7 @@ angular.module('sisepDevApp')
 
 function loginSVC($http, store){
 
-    
+    //mudei e funfou
 
     var req = {
       url: 'http://localhost/sisep-dev/app/api/services/webservice.php',
