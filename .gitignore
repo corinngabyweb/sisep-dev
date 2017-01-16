@@ -3,4 +3,8 @@ dist
 .tmp
 .sass-cache
 bower_components
+<<<<<<< HEAD
+=======
+nbproject
+>>>>>>> ce5f96f0bded3677161e8eb094522a8ac894fd17
 app/images/banco_de_imagens

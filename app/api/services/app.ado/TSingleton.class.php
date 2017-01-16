@@ -7,7 +7,7 @@ Class Connection
 {
 	var $instance;
 
-	var $hostname        = "127.0.0.1";
+	var $hostname        = "localhost";
 	var $username        = "root";
 	var $passwd          = 't730shgt';
 	//var $database_name   = "sisep";
