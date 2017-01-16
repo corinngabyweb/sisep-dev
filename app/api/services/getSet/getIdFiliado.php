@@ -16,12 +16,12 @@ if ($getQueryIdFiliado["num_rows"] > 0) {
         $_SESSION["retorno"]["dados"] = $getQueryIdFiliado[$x];
     }
     
-    $_SESSION["retorno"]["login"] = "false";
+    //$_SESSION["retorno"]["login"] = "false";
     $_SESSION["retorno"]["status"] = "true";
     
-    $_SESSION["matricula"] = $getQueryIdFiliado[0]["matricula_filiado"];
+    /*$_SESSION["matricula"] = $getQueryIdFiliado[0]["matricula_filiado"];
     $_SESSION["entidade"] = $getQueryIdFiliado[0]["fk_id_entidade_empregadora"];
-    $_SESSION["senha"] = $getQueryIdFiliado[0]["senha_filiado"];
+    $_SESSION["senha"] = $getQueryIdFiliado[0]["senha_filiado"];*/
 } else {
     $_SESSION["retorno"]["dados"] = null;
     $_SESSION["retorno"]["login"] = "false";
