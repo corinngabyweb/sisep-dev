@@ -16,7 +16,7 @@ if ($getQueryIdFiliado["num_rows"] > 0) {
         $_SESSION["retorno"]["dados"] = $getQueryIdFiliado[$x];
     }
     
-    $_SESSION["retorno"]["login"] = "true";
+    $_SESSION["retorno"]["login"] = "false";
     $_SESSION["retorno"]["status"] = "true";
     
     $_SESSION["matricula"] = $getQueryIdFiliado[0]["matricula_filiado"];
