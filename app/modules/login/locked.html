@@ -36,8 +36,8 @@
           <div layout layout-sm="column">
             <div flex="30" flex-sm="100">
               
-              <img src="images/user-128.png" alt="{{User.nome_filiado}} ainda não possui foto" ng-if="!User.foto_filiado" class="md-avatar" />
-              <div class="avatar-container" alt="Foto de {{User.nome_filiado}}" ng-if="User.foto_filiado" >
+              <img src="images/user-128.png" title="{{User.nome_filiado}} ainda não possui foto" ng-if="!User.foto_filiado" class="md-avatar" />
+              <div class="avatar-container" title="Foto de {{User.nome_filiado}}" ng-if="User.foto_filiado" >
                 <img src="{{User.foto_filiado}}" class="md-avatar" />
               </div>
             </div>
@@ -47,27 +47,24 @@
               <form name="cadastraSenha">
                 <md-input-container>
                   <label>Cadastre uma senha</label>
-                  <input type="text"
+                  <input type="password"
                          class="form-control"
                          required
                          name="novaSenha"
-                         data-ng-trim='false'
                          data-ng-model="user.novaSenha">
                 </md-input-container>
                 <md-input-container>
                     <label>Confirme sua senha</label>
-                    <input type="text"
+                    <input type="password"
                      class="form-control"
                      required
                      name="confSenha"
-                     data-ng-trim='false'
                      data-ng-model="user.confSenha"
-                     data-password-verify="user.novaSenha"
+                     match="user.novaSenha"
                       >
-                    <div class="md-errors-spacer"></div>
-                   <div ng-messages="cadastraSenha.confSenha.$error">
-                    <div ng-message="dataPasswordVerify">As senhas não conferem!</div>
-                  </div>          
+                     <div ng-messages="user.confSenha.$error">
+                    <div ng-message="match">As senhas não conferem </div>
+                  </div>        
                 </md-input-container>
               </form>
               <p style="font-size: 12px">Se você não é {{User.nome_filiado}}, <a href="#" md-colors="{color: 'red-500'}" style="cursor: pointer;" ng-click="login.getLogado()">clique aqui</a></p>
@@ -75,8 +72,8 @@
               </div>
             </div> 
           </div>
-          <div class="form-group">
-            <md-button class="btn-width-large btn-block btn-lg md-primary md-raised">Enviar</md-button>
+          <div class="form-group" >
+            <md-button class="btn-width-large btn-block btn-lg md-primary md-raised" ng-disabled="!(user.novaSenha && user.confSenha && !user.confSenha.$error)">Enviar</md-button>
           </div>
         </form>
       </div>

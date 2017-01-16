@@ -18,5 +18,6 @@ angular
     'angular-storage',
     'ngMaterial',
     'ui.router',
-    'ui.utils.masks'
+    'ui.utils.masks',
+    'validation.match'
   ]);
