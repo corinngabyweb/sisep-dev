@@ -12,7 +12,7 @@ angular.module('sisepDevApp').controller('LoginCtrl', LoginCtrl);
 function LoginCtrl($scope, $http, $timeout, $mdSidenav, $log,
   $location, config, $rootScope, $mdToast, loginSVC, loginFac) {
       var loginCT = this;
-      
+       
       loginCT.showPass = false;
       loginCT.credentials = {};
       loginCT.filiado = "";

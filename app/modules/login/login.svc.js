@@ -20,7 +20,7 @@ function loginSVC($http, store){
     };
 
 
-
+ 
     
 
     //login.logout = function(){
