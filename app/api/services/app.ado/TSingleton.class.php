@@ -11,7 +11,7 @@ Class Connection
 	var $username        = "root";
 	var $passwd          = '';
 	//var $database_name   = "sisep";
-	var $database_name   = "sisep_oficial";
+	var $database_name   = "sisep_oficial_v2";
 	
 	/*var $hostname        = "localhost";
 	var $username        = "root";

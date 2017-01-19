@@ -27,6 +27,7 @@ function LoginCtrl($scope, $http, $timeout, $mdSidenav, $log,
       loginCT.ifExists = function(credentials) {
         function success(obj){
           var user = obj.data;
+          console.log(obj);
           if(!user.dados)
           {
             $mdToast.show(

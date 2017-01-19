@@ -1,6 +1,6 @@
 <?php
 
-if (!(conectar($_SESSION["userSISEP"],$_SESSION["passSISEP"]))) {
+if ($arrPost["login"] == "OK") {
     $_SESSION["retorno"]["login"] = "false";
     $_SESSION["retorno"]["status"] = "erro001";
 } else {
