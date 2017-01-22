@@ -49,7 +49,8 @@ if (isset($arrPost["action"])) {
 header('Cache-Control: no-cache, must-revalidate');
 header('Content-Type: application/json; charset=utf-8');
 header("Access-Control-Allow-Origin: *");
+//header('Content-Type: text/html;');
 
 //print_r($_SESSION);
 
-echo json_encode($_SESSION["retorno"]);
+echo json_encode($_SESSION["retorno"], JSON_UNESCAPED_UNICODE);

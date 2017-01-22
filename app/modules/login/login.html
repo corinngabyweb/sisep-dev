@@ -41,7 +41,7 @@
                     <div ng-message="required">O preenchimento da matrícula é obrigatório!</div>
                   </div>
                 </md-input-container>
-                <md-input-container  ng-controller="SelectCtrl">
+                <!--<md-input-container  ng-controller="SelectCtrl">
                     <label>Entidade Empregadora</label>
                     <md-select ng-change="login.ifExists(credentials)" ng-model="credentials.entidade" required>
                       <md-option><em>Selecione seu Empregador</em></md-option>
@@ -53,7 +53,22 @@
                    <div ng-messages="credentials.entidade.$error">
                     <div ng-message="required">O preenchimento da entidade empregadora é obrigatório! </div>
                   </div>  
-                </md-input-container>
+                </md-input-container>-->
+                <div ng-controller="AutoCompCtrl as ctrl">
+                 <md-autocomplete flex
+            md-selected-item="ctrl.selectedItem"
+            md-search-text="ctrl.searchText"
+            md-items="ent in ctrl.querySearch('getIdFiliado', ctrl.searchText)"
+            md-item-text="ent.nome_filiado"
+            md-floating-label="Entidade Empregadora">
+          <md-item-template>
+
+            <span md-highlight-text="ent.nome_filiado">{{ent.matricula_filiado}} | {{ent.nome_filiado}}</span>  
+          </md-item-template>
+          
+          
+        </md-autocomplete>
+                </div>
                 <md-input-container ng-if="login.showPass">
                   <label for="input_0">Senha</label>
                   <input type="password" ng-model="credentials.senha" id="senha_login" ><div class="md-errors-spacer"></div>

@@ -9,9 +9,9 @@ Class Connection
 
 	var $hostname        = "localhost";
 	var $username        = "root";
-	var $passwd          = '';
+	var $passwd          = 't730shgt';
 	//var $database_name   = "sisep";
-	var $database_name   = "sisep_oficial_v2";
+	var $database_name   = "sisep_oficial";
 	
 	/*var $hostname        = "localhost";
 	var $username        = "root";
