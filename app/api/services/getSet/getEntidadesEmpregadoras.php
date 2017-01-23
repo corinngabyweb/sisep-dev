@@ -3,7 +3,7 @@ $dataSet = new Dao;
 
 $campos       = "pk_id_entidade_empregadora, nome_entidade_empregadora";
 $tabela       = "entidade_empregadora";
-$where        = "";
+$where        = "WHERE nome_entidade_empregadora LIKE '%".$arrPost["nome_entidade_empregadora"]."%'";
 $strWhereComp = "";
 $order        = " ORDER BY nome_entidade_empregadora";
 

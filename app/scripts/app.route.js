@@ -25,8 +25,8 @@ angular
               },
               'top@index' : { templateUrl: 'common/layout/header.html',},
               'left@index' : { templateUrl: 'common/navigation/navigation.html',},
-              'main@index' : { templateUrl: 'common/layout/main-data.html',},
-            },
+              'main@index' : { template: '<div ui-view="detail"></div>'}
+            }
           })
         .state('inicio', {
             url: '/inicio',

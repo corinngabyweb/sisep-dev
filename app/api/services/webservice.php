@@ -24,6 +24,7 @@ if (!(isset($_SESSION["retorno"]["login"]))) {
 }
 
 if (isset($arrPost["action"])) {
+    
     if ($arrPost["action"] == "authFiliado") { // Função para autentiar filiado depois de senha confirmada em JS
         if ($arrPost["log"] == "1") {
             $_SESSION["retorno"]["login"] = "true";

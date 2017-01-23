@@ -9,8 +9,7 @@
               {
                 params: {
                   action: svc,
-                  matricula_login:query,
-                  entidade_login: '20701010'
+                  nome_entidade_empregadora: query
                 }
             })
             .then(function(response){
