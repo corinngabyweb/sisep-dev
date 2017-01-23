@@ -2,7 +2,7 @@
 $dataSet = new Dao;
 
 $campos       = "pk_id_entidade_empregadora, nome_entidade_empregadora";
-$tabela       = "entidade_empreagadora";
+$tabela       = "entidade_empregadora";
 $where        = "";
 $strWhereComp = "";
 $order        = " ORDER BY nome_entidade_empregadora";
